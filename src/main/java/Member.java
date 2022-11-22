@@ -66,4 +66,10 @@ public class Member {
     public void setMemberNr(int memberNr) {
         this.memberNr = memberNr;
     }
+
+    @Override
+    public String toString() {
+        return "Member:" + "name:" + name + '\'' + ", birthDate:" + birthDate + ", phoneNumber:" + phoneNumber +
+                ", eMail:" + eMail + '\'' + ", activityStatus:" + activityStatus + ", memberNr:" + memberNr;
+    }
 }
