@@ -84,7 +84,7 @@ public class Member {
                 + " Fødselsdato: " + birthDate.format(dateFormat)
                 + " Telefonnr: " + phoneNumber
                 + " E-mail: " + eMail
-                + " Aktivitetsstatus: "
+                + " Aktivitetsstatus: " + activityStatus
                 + " Medlemsnr: " + memberNr;
     }
 }

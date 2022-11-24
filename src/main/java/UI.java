@@ -1,6 +1,6 @@
-import java.time.Instant;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -12,9 +12,8 @@ public class UI {
         loadDB();
         boolean isRunning = true;
         introMessage();
-        showMenu();
         while (isRunning) {
-            command();
+            showMenu();
             switch (readInt()) {
                 case 1:
                     memberHandling();
@@ -36,18 +35,14 @@ public class UI {
         }
     }
 
-    private void command() {
-        System.out.print("Menu valg: ");
-    }
-
     private void memberHandling() {
+        System.out.println();
         System.out.println("""
                 1. Opret medlem
                 2. Rediger medlem
                 3. Slet medlem
                 4. Vis medlemmer     
                 """);
-        command();
         switch (readInt()) {
             case 1:
                 System.out.println("Opret medlem");
@@ -65,7 +60,9 @@ public class UI {
                 System.out.println("Vis medlemmer");
                 showMembers();
                 break;
-
+            default:
+                System.out.println("Fejl i valg. Prøv igen");
+                break;
         }
     }
 
@@ -88,11 +85,14 @@ public class UI {
 
     private void introMessage() {
         System.out.println("""
-                Velkommen til Delfin svømmeklubben
+                ----------------------------------
+                SVØMMEKLUBBEN DELFINEN
+                ----------------------------------
                 """);
     }
 
     public void showMenu() {
+        System.out.println();
         System.out.println("""
                 1. Medlemshåndtering
                 2. Økonomi
@@ -102,24 +102,42 @@ public class UI {
     }
 
     public void addMember() {
-        DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        System.out.println("Indtast navn");
-        String name = sc.next();
-        System.out.println("Indtast efternavn");
-        String lastName = sc.next();
-        System.out.println("Indtast fødselsdato (DD/MM/YYYY)");
-        String date = sc.next();
-        LocalDate birthDate = LocalDate.parse(date, dateFormat);
-        System.out.println("Indtast telefonnummer");
-        int phoneNumber = sc.nextInt();
-        System.out.println("Indtast e-mail");
-        String eMail = sc.next();
-        System.out.println("indtast medlemsaktivitet (true/false)");
-        boolean activityStatus = sc.nextBoolean();
-        System.out.println("Enter medlemsnummer");
-        int memberNr = sc.nextInt();
+            System.out.println("Indtast navn");
+            String name = sc.next();
+            System.out.println("Indtast efternavn");
+            String lastName = sc.next();
 
-        controller.addMember(name, lastName, birthDate, phoneNumber, eMail, activityStatus, memberNr);
+            // add birthdate
+
+            boolean validity = false;
+            LocalDate birthDate = null;
+            DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+            do {
+                System.out.println("Indtast fødselsdato (DD/MM/YYYY)");
+                try {
+                    String date = sc.next();
+                    birthDate = LocalDate.parse(date, dateFormat);
+                    validity = true;
+                } catch (DateTimeParseException e) {
+                    System.out.println("Fejl i dato format. Prøv igen");
+                }
+
+            } while (!validity);
+
+            System.out.println("Indtast telefonnummer");
+            int phoneNumber = readInt();
+            System.out.println("Indtast e-mail");
+            String eMail = sc.next();
+            System.out.println("Er medlemmet aktivt? (Svar JA, ellers er medlemmet inaktivt)");
+            boolean activityStatus = false;
+            String isActivityStatus = sc.next().toLowerCase();
+            if (isActivityStatus.contentEquals("ja")) {
+                activityStatus = true;
+            }
+            System.out.println("Enter medlemsnummer");
+            int memberNr = readInt();
+
+            controller.addMember(name, lastName, birthDate, phoneNumber, eMail, activityStatus, memberNr);
     }
 
     public void showMembers() {
@@ -201,6 +219,8 @@ public class UI {
             String newMemberNr = sc.nextLine();
             if (!newMemberNr.isEmpty()) editMember.setMemberNr(Integer.parseInt(newMemberNr));
 
+            //Servicemeddelse
+            System.out.println("Dine ændringer er blevet gemt.");
         } catch (InputMismatchException e) {
             System.out.println("Det var ikke muligt at rette medlemmet. Prøv igen");
         }
