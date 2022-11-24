@@ -9,9 +9,10 @@ public class Member {
     private boolean activityStatus;
     private int memberNr;
 
-    public Member(String name, int date, int month, int year, int phoneNumber, String eMail, boolean activeOrPassive, int memberNr) {
+    public Member(String name, String lastName, LocalDate birthDate, int phoneNumber, String eMail, boolean activeOrPassive, int memberNr) {
         this.name = name;
-        birthDate = LocalDate.of(year,month,date);
+        this.lastName = lastName;
+        this.birthDate = birthDate;
         this.phoneNumber = phoneNumber;
         this.eMail = eMail;
         this.activityStatus = activeOrPassive;
@@ -42,10 +43,16 @@ public class Member {
     public int getMemberNr() {
         return memberNr;
     }
+    public String getLastName(){
+        return lastName;
+    }
 
     //Set metode
     public void setName(String name) {
         this.name = name;
+    }
+    public void setLastName (String lastName){
+        this.lastName = lastName;
     }
 
     public void setBirthDate(LocalDate birthDate) {
