@@ -1,4 +1,5 @@
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class Member {
     private String name;
@@ -69,7 +70,13 @@ public class Member {
 
     @Override
     public String toString() {
-        return "Member:" + "name:" + name + '\'' + ", birthDate:" + birthDate + ", phoneNumber:" + phoneNumber +
-                ", eMail:" + eMail + '\'' + ", activityStatus:" + activityStatus + ", memberNr:" + memberNr;
+        DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        return "Navn: " + name
+                + " Efternavn: " + lastName
+                + " Fødselsdato: " + birthDate.format(dateFormat)
+                + " Telefonnr: " + phoneNumber
+                + " E-mail: " + eMail
+                + " Aktivitetsstatus: "
+                + " Medlemsnr: " + memberNr;
     }
 }
