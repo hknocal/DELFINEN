@@ -3,6 +3,7 @@ import java.time.format.DateTimeFormatter;
 
 public class Member {
     private String name;
+    private String lastName;
     private LocalDate birthDate;
     private int phoneNumber;
     private String eMail;
