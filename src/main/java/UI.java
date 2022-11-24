@@ -14,6 +14,7 @@ public class UI {
         introMessage();
         showMenu();
         while (isRunning) {
+            command();
             switch (readInt()) {
                 case 1:
                     memberHandling();
@@ -35,15 +36,18 @@ public class UI {
         }
     }
 
+    private void command() {
+        System.out.print("Menu valg: ");
+    }
+
     private void memberHandling() {
         System.out.println("""
-                                
                 1. Opret medlem
                 2. Rediger medlem
                 3. Slet medlem
-                4. Vis medlemmer
-                                
+                4. Vis medlemmer     
                 """);
+        command();
         switch (readInt()) {
             case 1:
                 System.out.println("Opret medlem");
@@ -118,31 +122,30 @@ public class UI {
         controller.addMember(name, lastName, birthDate, phoneNumber, eMail, activityStatus, memberNr);
     }
 
-    public void showMembers () {
+    public void showMembers() {
         for (Member members : controller.getMemberDatabase()) {
             System.out.println(members);
         }
     }
+
     public void deleteMember() {
-        if (controller.getMemberDatabase().isEmpty()) {
-            System.out.println("Der er ingen medlemmer i databasen");
-        } else {
-            System.out.println("Vælg personen du vil slette: \n");
-            for (Member member : controller.getMemberDatabase()) {
-                System.out.println(controller.getMemberDatabase().indexOf(member) + 1 + "" + member.getName());
+        try {
+            if (controller.getMemberDatabase().isEmpty()) {
+                System.out.println("Ingen medlemmer blev fundet. ");
             }
-            int d = readInt();
-            switch (d) {
-                case 1:
-                    controller.deleteMember(d);
-                    break;
-                default:
-                    System.out.println("Prøv igen");
+            for (int i = 0; i < controller.getMemberDatabase().size(); i++) {
+                System.out.println("[" + i + "] " + controller.getMemberDatabase().get(i));
             }
+            System.out.println("Vælg det medlem du vil slette: ");
+            int number = readInt();
+            controller.deleteMember(number);
+            System.out.println("Medlem: " + number + " blev slettet.");
+        } catch (Exception e) {
+            System.out.println("Det var ikke muligt at slette medlemmet. Prøv igen");
         }
     }
 
-    public void editMember(){
+    public void editMember() {
         DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         try {
             for (int i = 0; i < controller.getMemberDatabase().size(); i++) {
@@ -199,12 +202,13 @@ public class UI {
             if (!newMemberNr.isEmpty()) editMember.setMemberNr(Integer.parseInt(newMemberNr));
 
         } catch (InputMismatchException e) {
-            System.out.println("Det var ikke muligt at slette medlemmet. Prøv igen");
+            System.out.println("Det var ikke muligt at rette medlemmet. Prøv igen");
         }
     }
 
     public void saveToDB() {
         controller.saveToDb();
+        System.out.println(controller.getMemberDatabase().size() + " medlemmer blev gemt i databasen");
     }
 
     public void loadDB() {

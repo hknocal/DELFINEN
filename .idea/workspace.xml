@@ -4,23 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" name="Changes" comment="initial setup ui, member class">
-      <change afterPath="$PROJECT_DIR$/src/memberList.csv" afterDir="false" />
+    <list default="true" id="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" name="Changes" comment="crud methods now in working condition">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Database.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/FileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FileHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Member.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/UI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/memberList.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/memberList.csv" afterDir="false" />
     </list>
-    <list id="4a7f8e51-8058-4493-a392-f3a0620d339d" name="Changes by Heval" comment="" />
-    <list id="c7729995-3726-4669-9b6a-8e8967e08d49" name="Changes by Zana" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Member.java" afterDir="false" />
-    </list>
-    <list id="1793f741-b4a6-440b-a3b0-97a2c845b874" name="Changes by 冷天空" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Member.java" afterDir="false" />
-    </list>
+    <list id="c7729995-3726-4669-9b6a-8e8967e08d49" name="Changes by Zana" comment="Changes by Zana" />
+    <list id="1793f741-b4a6-440b-a3b0-97a2c845b874" name="Changes by 冷天空" comment="Changes by 冷天空 (magnus lol)" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,19 +26,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/main/java/Member.java">
-      <ranges>
-        <range start1="1" end1="1" start2="1" end2="2" changelist="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" />
-        <range start1="4" end1="4" start2="5" end2="6" changelist="1793f741-b4a6-440b-a3b0-97a2c845b874" />
-        <range start1="10" end1="11" start2="12" end2="13" changelist="c7729995-3726-4669-9b6a-8e8967e08d49" />
-        <range start1="12" end1="13" start2="14" end2="16" changelist="c7729995-3726-4669-9b6a-8e8967e08d49" />
-        <range start1="43" end1="43" start2="46" end2="49" changelist="c7729995-3726-4669-9b6a-8e8967e08d49" />
-        <range start1="48" end1="48" start2="54" end2="57" changelist="c7729995-3726-4669-9b6a-8e8967e08d49" />
-        <range start1="71" end1="73" start2="80" end2="88" changelist="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" />
-      </ranges>
-    </file>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -94,7 +72,7 @@
       <updated>1669120632784</updated>
       <workItem from="1669120634279" duration="6507000" />
       <workItem from="1669285128552" duration="130000" />
-      <workItem from="1669285304687" duration="14361000" />
+      <workItem from="1669285304687" duration="15896000" />
     </task>
     <task id="LOCAL-00001" summary="setup gitignore file">
       <created>1669120697504</created>
@@ -110,7 +88,28 @@
       <option name="project" value="LOCAL" />
       <updated>1669121063141</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="crud methods now in working condition">
+      <created>1669301316974</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1669301316974</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Changes by Zana">
+      <created>1669301337090</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1669301337090</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Changes by 冷天空 (magnus lol)">
+      <created>1669301351438</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1669301351438</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -130,14 +129,17 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="setup gitignore file" />
     <MESSAGE value="setup classes" />
-    <option name="LAST_COMMIT_MESSAGE" value="setup classes" />
+    <MESSAGE value="crud methods now in working condition" />
+    <MESSAGE value="Changes by Zana" />
+    <MESSAGE value="Changes by 冷天空 (magnus lol)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes by 冷天空 (magnus lol)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/UI.java</url>
-          <line>115</line>
+          <line>118</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

@@ -21,9 +21,7 @@ public class Controller {
         return database.getMemberDatabase();
     }
 
-    public void deleteMember(int delete) {
-        int deleteM = delete - 1;
-        System.out.println(database.getMemberDatabase().get(deleteM).getName());
-        database.getMemberDatabase().remove(deleteM);
+    public void deleteMember(int number) {
+        database.getMemberDatabase().remove(number);
     }
 }
