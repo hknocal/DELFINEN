@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" name="Changes" comment="wrapped delete in a try catch to handle exceptions">
+    <list default="true" id="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" name="Changes" comment="added do while and try catch to add method to handle datetime exceptions. added if statement to handle userinput to whether member is active/inactive">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Member.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Database.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/UI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/memberList.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/memberList.csv" afterDir="false" />
     </list>
     <list id="c7729995-3726-4669-9b6a-8e8967e08d49" name="Changes by Zana" comment="Changes by Zana" />
     <list id="1793f741-b4a6-440b-a3b0-97a2c845b874" name="Changes by 冷天空" comment="Changes by 冷天空 (magnus lol)" />
@@ -36,18 +35,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
@@ -72,7 +71,9 @@
       <updated>1669120632784</updated>
       <workItem from="1669120634279" duration="6507000" />
       <workItem from="1669285128552" duration="130000" />
-      <workItem from="1669285304687" duration="22738000" />
+      <workItem from="1669285304687" duration="22911000" />
+      <workItem from="1669574121424" duration="1868000" />
+      <workItem from="1669623607826" duration="2987000" />
     </task>
     <task id="LOCAL-00001" summary="setup gitignore file">
       <created>1669120697504</created>
@@ -116,7 +117,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669306663488</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="added do while and try catch to add method to handle datetime exceptions. added if statement to handle userinput to whether member is active/inactive">
+      <created>1669313428451</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1669313428451</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -140,7 +148,8 @@
     <MESSAGE value="Changes by Zana" />
     <MESSAGE value="Changes by 冷天空 (magnus lol)" />
     <MESSAGE value="wrapped delete in a try catch to handle exceptions" />
-    <option name="LAST_COMMIT_MESSAGE" value="wrapped delete in a try catch to handle exceptions" />
+    <MESSAGE value="added do while and try catch to add method to handle datetime exceptions. added if statement to handle userinput to whether member is active/inactive" />
+    <option name="LAST_COMMIT_MESSAGE" value="added do while and try catch to add method to handle datetime exceptions. added if statement to handle userinput to whether member is active/inactive" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -16,10 +16,15 @@ public class Database {
         memberDatabase.add(member);
     }
 
+    public void searchDB() {
+    String searchCriteria;
+    }
     public void setMemberDatabase(ArrayList <Member> memberDatabase) {
         this.memberDatabase = memberDatabase;
     }
 }
 
-
+//TODO Søgefunktion - skal placeres i DB
+//TODO Edit funktion - skal kunne fremsøge på kriterier istedet for for loop med int.
+//TODO ENUM til discipliner
 

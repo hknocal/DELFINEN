@@ -41,7 +41,8 @@ public class UI {
                 1. Opret medlem
                 2. Rediger medlem
                 3. Slet medlem
-                4. Vis medlemmer     
+                4. Vis medlemmer
+                5. Søg medlemmer     
                 """);
         switch (readInt()) {
             case 1:
@@ -84,7 +85,7 @@ public class UI {
     }
 
     private void introMessage() {
-        System.out.println("""
+        System.out.print("""
                 ----------------------------------
                 SVØMMEKLUBBEN DELFINEN
                 ----------------------------------
@@ -107,22 +108,7 @@ public class UI {
             System.out.println("Indtast efternavn");
             String lastName = sc.next();
 
-            // add birthdate
-
-            boolean validity = false;
-            LocalDate birthDate = null;
-            DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-            do {
-                System.out.println("Indtast fødselsdato (DD/MM/YYYY)");
-                try {
-                    String date = sc.next();
-                    birthDate = LocalDate.parse(date, dateFormat);
-                    validity = true;
-                } catch (DateTimeParseException e) {
-                    System.out.println("Fejl i dato format. Prøv igen");
-                }
-
-            } while (!validity);
+            LocalDate birthDate = addBirthday();
 
             System.out.println("Indtast telefonnummer");
             int phoneNumber = readInt();
@@ -138,6 +124,24 @@ public class UI {
             int memberNr = readInt();
 
             controller.addMember(name, lastName, birthDate, phoneNumber, eMail, activityStatus, memberNr);
+    }
+
+    private LocalDate addBirthday() {
+        boolean validity = false;
+        LocalDate birthDate = null;
+        DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        do {
+            System.out.println("Indtast fødselsdato (DD/MM/YYYY)");
+            try {
+                String date = sc.next();
+                birthDate = LocalDate.parse(date, dateFormat);
+                validity = true;
+            } catch (DateTimeParseException e) {
+                System.out.println("Fejl i dato format. Prøv igen");
+            }
+
+        } while (!validity);
+        return birthDate;
     }
 
     public void showMembers() {
