@@ -109,6 +109,10 @@ public class UI {
                 System.out.println("Vis medlemmer");
                 showMembers();
                 break;
+            case 5:
+                System.out.println("Søg efter medlemmer");
+                searchMembers();
+                break;
             default:
                 System.out.println("Fejl i valg. Prøv igen");
                 break;
@@ -149,6 +153,7 @@ public class UI {
                 9. Afslut
                 """);
     }
+
 
     public void addMemberSystem() {
         System.out.println("""

@@ -2,8 +2,11 @@ import java.time.LocalDate;
 
 public class Competitor extends Member{
 
-    public Competitor(String name, String lastName, LocalDate birthDate, int phoneNumber, String eMail, boolean activeOrPassive, int memberNr) {
-        super(name, lastName, birthDate, phoneNumber, eMail, activeOrPassive, memberNr);
+    private Disciplin disciplin;
+    private double performanceTime;
+    private LocalDate date;
+    public Competitor(String name, String lastName, LocalDate birthDate, int phoneNumber, String eMail, boolean activityStatus, int memberNr) {
+        super(name, lastName, birthDate, phoneNumber, eMail, activityStatus, memberNr);
     }
 
     public void setPerformanceInfo(Disciplin disciplin, double performanceTime, LocalDate date) {
