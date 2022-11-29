@@ -11,9 +11,9 @@ public class FileHandler {
     public void saveToDB(ArrayList<Member> memberDatabase) {
         try {
             writer = new FileWriter(memberList);
-            for (Member m : memberDatabase) {
-                writer.write(m.getName() + "," + m.getLastName() + "," + m.getBirthDate()
-                        + "," + m.getPhoneNumber() + "," + m.geteMail() + "," + m.isActivityStatus() + "," + m.getMemberNr() + "\n");
+            for (Member member : memberDatabase) {
+                writer.write(member.getName() + "," + member.getLastName() + "," + member.getBirthDate()
+                        + "," + member.getPhoneNumber() + "," + member.geteMail() + "," + member.isActivityStatus() + "," + member.getMemberNr() + "\n");
             }
             writer.close();
         } catch (Exception e) {

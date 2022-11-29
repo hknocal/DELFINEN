@@ -1,6 +1,7 @@
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
+import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -22,7 +23,7 @@ public class UI {
                     //Økonomi
                     break;
                 case 3:
-                    //Træning
+                    trainerHandling();
                     break;
                 case 9:
                     saveToDB();
@@ -33,6 +34,53 @@ public class UI {
                     break;
             }
         }
+    }
+
+    private void trainerHandling() {
+        System.out.println("""
+                1. Registrer træning
+                """);
+        switch (readInt()) {
+            case 1:
+                registerPerformance();
+                break;
+        }
+    }
+
+    public void registerPerformance() {
+        // Choose competitor
+        for (Member member : controller.getMemberDatabase()) {
+            if (member instanceof Competitor) {
+                System.out.println(member);
+            }
+        }
+
+        System.out.println("Vælg medlem");
+        String competitor = sc.next();
+        ArrayList<Member> searchList = controller.searchDB(competitor);
+        Member chosenMember = searchList.get(0);
+
+        // Choose discipline
+        Disciplin disciplins[] = Disciplin.values();
+        System.out.println("Discipliner:");
+        for (Disciplin d : disciplins) {
+            System.out.println(d);
+        }
+        System.out.print("Vælg disciplin: ");
+        Disciplin disciplin = Disciplin.valueOf(sc.nextLine());
+
+        // Register performance time in minute,second format
+        System.out.println("Indtast tid i formatet mm.ss");
+        double performanceTime = sc.nextDouble();
+
+        // Register date DD/MM/YYY
+        LocalDate date = null;
+        DateTimeFormatter dateTimeFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        System.out.println("Indtast dato");
+        String enteredDate = sc.next();
+        date = LocalDate.parse(enteredDate, dateTimeFormat);
+
+        //controller.registerPerformance(competitor, disciplin, performanceTime, date);
     }
 
     private void memberHandling() {
@@ -47,7 +95,7 @@ public class UI {
         switch (readInt()) {
             case 1:
                 System.out.println("Opret medlem");
-                addMember();
+                addMemberSystem();
                 break;
             case 2:
                 System.out.println("Rediger medlem");
@@ -102,28 +150,67 @@ public class UI {
                 """);
     }
 
+    public void addMemberSystem() {
+        System.out.println("""
+                1. Tilføj motionist
+                2. Tilføj konkurrenceudøver
+                3. Vis test
+                """);
+        switch (readInt()) {
+            case 1 -> addMember();
+            case 2 -> addCompetitiveMember();
+            case 3 -> showCompetitiveMembers();
+        }
+    }
+
     public void addMember() {
-            System.out.println("Indtast navn");
-            String name = sc.next();
-            System.out.println("Indtast efternavn");
-            String lastName = sc.next();
+        System.out.println("Indtast navn");
+        String name = sc.next();
+        System.out.println("Indtast efternavn");
+        String lastName = sc.next();
 
-            LocalDate birthDate = addBirthday();
+        LocalDate birthDate = addBirthday();
 
-            System.out.println("Indtast telefonnummer");
-            int phoneNumber = readInt();
-            System.out.println("Indtast e-mail");
-            String eMail = sc.next();
-            System.out.println("Er medlemmet aktivt? (Svar JA, ellers er medlemmet inaktivt)");
-            boolean activityStatus = false;
-            String isActivityStatus = sc.next().toLowerCase();
-            if (isActivityStatus.contentEquals("ja")) {
-                activityStatus = true;
-            }
-            System.out.println("Enter medlemsnummer");
-            int memberNr = readInt();
+        System.out.println("Indtast telefonnummer");
+        int phoneNumber = readInt();
+        System.out.println("Indtast e-mail");
+        String eMail = sc.next();
+        System.out.println("Er medlemmet aktivt? (Svar JA, ellers er medlemmet inaktivt)");
+        boolean activityStatus = false;
+        String isActivityStatus = sc.next().toLowerCase();
+        if (isActivityStatus.contentEquals("ja")) {
+            activityStatus = true;
+        }
+        System.out.println("Enter medlemsnummer");
+        int memberNr = readInt();
 
-            controller.addMember(name, lastName, birthDate, phoneNumber, eMail, activityStatus, memberNr);
+        controller.addMember(name, lastName, birthDate, phoneNumber, eMail, activityStatus, memberNr);
+    }
+
+    public void addCompetitiveMember() {
+
+        System.out.println("Indtast navn");
+        String name = sc.next();
+        System.out.println("Indtast efternavn");
+        String lastName = sc.next();
+
+        LocalDate birthDate = addBirthday();
+
+        System.out.println("Indtast telefonnummer");
+        int phoneNumber = readInt();
+        System.out.println("Indtast e-mail");
+        String eMail = sc.next();
+        System.out.println("Er medlemmet aktivt? (Svar JA, ellers er medlemmet inaktivt)");
+        boolean activityStatus = false;
+        String isActivityStatus = sc.next().toLowerCase();
+        if (isActivityStatus.contentEquals("ja")) {
+            activityStatus = true;
+        }
+        System.out.println("Enter medlemsnummer");
+        int memberNr = readInt();
+
+        controller.addCompetitiveMember(name, lastName, birthDate, phoneNumber, eMail, activityStatus, memberNr);
+
     }
 
     private LocalDate addBirthday() {
@@ -145,8 +232,16 @@ public class UI {
     }
 
     public void showMembers() {
-        for (Member members : controller.getMemberDatabase()) {
-            System.out.println(members);
+        for (Member member : controller.getMemberDatabase()) {
+            System.out.println(member);
+        }
+    }
+
+    public void showCompetitiveMembers() {
+        for (Member member : controller.getMemberDatabase()) {
+            if (member instanceof Competitor) {
+                System.out.println(member);
+            }
         }
     }
 
@@ -227,6 +322,19 @@ public class UI {
             System.out.println("Dine ændringer er blevet gemt.");
         } catch (InputMismatchException e) {
             System.out.println("Det var ikke muligt at rette medlemmet. Prøv igen");
+        }
+    }
+
+    public void searchMembers() {
+        System.out.print("Indtast søgekriterie: ");
+        String searchCriteria = sc.next();
+        ArrayList <Member> searchResult = controller.searchDB(searchCriteria);
+        if (searchResult.isEmpty()) {
+            System.out.println("Intet medlem fundet");
+        }
+        System.out.println("Medlem fundet:");
+        for (Member member : searchResult){
+            System.out.println(member);
         }
     }
 

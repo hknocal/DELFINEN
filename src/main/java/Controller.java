@@ -9,6 +9,9 @@ public class Controller {
         database.addMember(name, lastName, birthDate, phoneNumber, eMail, activityStatus, memberNr);
     }
 
+    public void addCompetitiveMember(String name, String lastName, LocalDate birthDate, int phoneNumber, String eMail, boolean activityStatus, int memberNr) {
+        database.addCompetitiveMember(name, lastName, birthDate, phoneNumber, eMail, activityStatus, memberNr);
+    }
     public void saveToDb() {
         fileHandler.saveToDB(database.getMemberDatabase());
     }
@@ -23,5 +26,12 @@ public class Controller {
 
     public void deleteMember(int number) {
         database.getMemberDatabase().remove(number);
+    }
+
+    public ArrayList <Member> searchDB (String searchCriteria) {
+        return database.searchDB(searchCriteria);
+    }
+    public void registerPerformance(Competitor competitor, Disciplin disciplin, double performanceTime, LocalDate date) {
+        competitor.setPerformanceInfo(disciplin, performanceTime, date);
     }
 }
