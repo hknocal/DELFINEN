@@ -186,10 +186,8 @@ public class UI {
         if (isActivityStatus.contentEquals("ja")) {
             activityStatus = true;
         }
-        System.out.println("Enter medlemsnummer");
-        int memberNr = readInt();
 
-        controller.addMember(name, lastName, birthDate, phoneNumber, eMail, activityStatus, memberNr);
+        controller.addMember(name, lastName, birthDate, phoneNumber, eMail, activityStatus);
     }
 
     public void addCompetitiveMember() {
@@ -211,10 +209,8 @@ public class UI {
         if (isActivityStatus.contentEquals("ja")) {
             activityStatus = true;
         }
-        System.out.println("Enter medlemsnummer");
-        int memberNr = readInt();
 
-        controller.addCompetitiveMember(name, lastName, birthDate, phoneNumber, eMail, activityStatus, memberNr);
+        controller.addCompetitiveMember(name, lastName, birthDate, phoneNumber, eMail, activityStatus);
 
     }
 
@@ -316,12 +312,6 @@ public class UI {
             System.out.println("Indtast et nyt medlemskabstype");
             String newType = sc.nextLine();
             if (!newEmail.isEmpty()) editMember.setActivityStatus(Boolean.parseBoolean(newType));
-
-            //Redigering for membernr
-            System.out.println("Medlemsnummer: " + editMember.getMemberNr());
-            System.out.println("Indtast et nyt medlemsnummer");
-            String newMemberNr = sc.nextLine();
-            if (!newMemberNr.isEmpty()) editMember.setMemberNr(Integer.parseInt(newMemberNr));
 
             //Servicemeddelse
             System.out.println("Dine ændringer er blevet gemt.");

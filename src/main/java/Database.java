@@ -13,13 +13,13 @@ public class Database {
     }
 
     //Add method to our arraylist
-    public void addMember(String name, String lastName, LocalDate birthDate, int phoneNumber, String eMail, boolean activityStatus, int memberNr) {
-        Member member = new Member(name, lastName, birthDate, phoneNumber, eMail, activityStatus, memberNr);
+    public void addMember(String name, String lastName, LocalDate birthDate, int phoneNumber, String eMail, boolean activityStatus) {
+        Member member = new Member(name, lastName, birthDate, phoneNumber, eMail, activityStatus);
         memberDatabase.add(member);
     }
 
-    public void addCompetitiveMember(String name, String lastName, LocalDate birthDate, int phoneNumber, String eMail, boolean activityStatus, int memberNr) {
-        Competitor competitor = new Competitor(name, lastName, birthDate, phoneNumber, eMail, activityStatus, memberNr);
+    public void addCompetitiveMember(String name, String lastName, LocalDate birthDate, int phoneNumber, String eMail, boolean activityStatus) {
+        Competitor competitor = new Competitor(name, lastName, birthDate, phoneNumber, eMail, activityStatus);
         memberDatabase.add(competitor);
     }
 
