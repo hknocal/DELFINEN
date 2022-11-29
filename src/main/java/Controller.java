@@ -5,12 +5,12 @@ public class Controller {
     Database database = new Database();
     FileHandler fileHandler = new FileHandler();
 
-    public void addMember(String name, String lastName, LocalDate birthDate, int phoneNumber, String eMail, boolean activityStatus, int memberNr) {
-        database.addMember(name, lastName, birthDate, phoneNumber, eMail, activityStatus, memberNr);
+    public void addMember(String name, String lastName, LocalDate birthDate, int phoneNumber, String eMail, boolean activityStatus) {
+        database.addMember(name, lastName, birthDate, phoneNumber, eMail, activityStatus);
     }
 
-    public void addCompetitiveMember(String name, String lastName, LocalDate birthDate, int phoneNumber, String eMail, boolean activityStatus, int memberNr) {
-        database.addCompetitiveMember(name, lastName, birthDate, phoneNumber, eMail, activityStatus, memberNr);
+    public void addCompetitiveMember(String name, String lastName, LocalDate birthDate, int phoneNumber, String eMail, boolean activityStatus) {
+        database.addCompetitiveMember(name, lastName, birthDate, phoneNumber, eMail, activityStatus);
     }
     public void saveToDb() {
         fileHandler.saveToDB(database.getMemberDatabase());

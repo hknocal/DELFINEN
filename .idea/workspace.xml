@@ -4,20 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" name="Changes" comment="added do while and try catch to add method to handle datetime exceptions. added if statement to handle userinput to whether member is active/inactive">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Disciplin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Competitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Competitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Database.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/FileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FileHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/UI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/memberList.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/memberList.csv" afterDir="false" />
-    </list>
-    <list id="a1224545-6d16-4849-82f6-2e734be0be0a" name="Changes by Zana" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/Competitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Competitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/UI.java" afterDir="false" />
-    </list>
+    <list default="true" id="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" name="Changes" comment="color enum" />
+    <list id="a1224545-6d16-4849-82f6-2e734be0be0a" name="Changes by Zana" comment="Changes by Zana" />
     <list id="1793f741-b4a6-440b-a3b0-97a2c845b874" name="Changes by 冷天空" comment="Changes by 冷天空 (magnus lol)" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,33 +22,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/main/java/UI.java">
-      <ranges>
-        <range start1="3" end1="3" start2="3" end2="4" changelist="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" />
-        <range start1="24" end1="25" start2="25" end2="26" changelist="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" />
-        <range start1="36" end1="36" start2="37" end2="84" changelist="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" />
-        <range start1="49" end1="50" start2="97" end2="98" changelist="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" />
-        <range start1="63" end1="63" start2="111" end2="115" changelist="a1224545-6d16-4849-82f6-2e734be0be0a" />
-        <range start1="103" end1="103" start2="155" end2="156" changelist="a1224545-6d16-4849-82f6-2e734be0be0a" />
-        <range start1="104" end1="104" start2="157" end2="170" changelist="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" />
-        <range start1="105" end1="109" start2="171" end2="175" changelist="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" />
-        <range start1="110" end1="111" start2="176" end2="177" changelist="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" />
-        <range start1="112" end1="124" start2="178" end2="190" changelist="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" />
-        <range start1="125" end1="126" start2="191" end2="192" changelist="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" />
-        <range start1="128" end1="128" start2="194" end2="220" changelist="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" />
-        <range start1="147" end1="149" start2="239" end2="241" changelist="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" />
-        <range start1="151" end1="151" start2="243" end2="251" changelist="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" />
-        <range start1="231" end1="231" start2="331" end2="344" changelist="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/main/java/Competitor.java">
-      <ranges>
-        <range start1="4" end1="6" start2="4" end2="9" changelist="a1224545-6d16-4849-82f6-2e734be0be0a" />
-        <range start1="7" end1="7" start2="10" end2="16" changelist="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" />
-      </ranges>
-    </file>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -160,7 +121,28 @@
       <option name="project" value="LOCAL" />
       <updated>1669313428451</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="searchdb refactored now placed in controller, added competitor class, disciplin, tweaks in ui etc">
+      <created>1669748921234</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1669748921234</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Changes by Zana">
+      <created>1669748930035</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1669748930036</updated>
+    </task>
+    <task id="LOCAL-00010" summary="color enum">
+      <created>1669748950430</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1669748950430</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -181,11 +163,13 @@
     <MESSAGE value="setup gitignore file" />
     <MESSAGE value="setup classes" />
     <MESSAGE value="crud methods now in working condition" />
-    <MESSAGE value="Changes by Zana" />
     <MESSAGE value="Changes by 冷天空 (magnus lol)" />
     <MESSAGE value="wrapped delete in a try catch to handle exceptions" />
     <MESSAGE value="added do while and try catch to add method to handle datetime exceptions. added if statement to handle userinput to whether member is active/inactive" />
-    <option name="LAST_COMMIT_MESSAGE" value="added do while and try catch to add method to handle datetime exceptions. added if statement to handle userinput to whether member is active/inactive" />
+    <MESSAGE value="Changes by Zana" />
+    <MESSAGE value="searchdb refactored now placed in controller, added competitor class, disciplin, tweaks in ui etc" />
+    <MESSAGE value="color enum" />
+    <option name="LAST_COMMIT_MESSAGE" value="color enum" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

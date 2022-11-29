@@ -13,7 +13,7 @@ public class FileHandler {
             writer = new FileWriter(memberList);
             for (Member member : memberDatabase) {
                 writer.write(member.getName() + "," + member.getLastName() + "," + member.getBirthDate()
-                        + "," + member.getPhoneNumber() + "," + member.geteMail() + "," + member.isActivityStatus() + "," + member.getMemberNr() + "\n");
+                        + "," + member.getPhoneNumber() + "," + member.geteMail() + "," + member.isActivityStatus() + "\n");
             }
             writer.close();
         } catch (Exception e) {
@@ -33,8 +33,7 @@ public class FileHandler {
                         LocalDate.parse(line[2]),
                         Integer.parseInt(line[3]),
                         line[4],
-                        Boolean.parseBoolean(line[5]),
-                        Integer.parseInt(line[6])
+                        Boolean.parseBoolean(line[5])
                 );
                 memberDatabase.add(member);
             }

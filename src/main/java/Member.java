@@ -8,16 +8,14 @@ public class Member {
     private int phoneNumber;
     private String eMail;
     private boolean activityStatus;
-    private int memberNr;
 
-    public Member(String name, String lastName, LocalDate birthDate, int phoneNumber, String eMail, boolean activeOrPassive, int memberNr) {
+    public Member(String name, String lastName, LocalDate birthDate, int phoneNumber, String eMail, boolean activityStatus) {
         this.name = name;
         this.lastName = lastName;
         this.birthDate = birthDate;
         this.phoneNumber = phoneNumber;
         this.eMail = eMail;
-        this.activityStatus = activeOrPassive;
-        this.memberNr = memberNr;
+        this.activityStatus = activityStatus;
     }
 
     //Get metode
@@ -39,10 +37,6 @@ public class Member {
 
     public boolean isActivityStatus() {
         return activityStatus;
-    }
-
-    public int getMemberNr() {
-        return memberNr;
     }
     public String getLastName(){
         return lastName;
@@ -72,10 +66,6 @@ public class Member {
         this.activityStatus = activityStatus;
     }
 
-    public void setMemberNr(int memberNr) {
-        this.memberNr = memberNr;
-    }
-
     @Override
     public String toString() {
         DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy");
@@ -84,7 +74,6 @@ public class Member {
                 + " Fødselsdato: " + birthDate.format(dateFormat)
                 + " Telefonnr: " + phoneNumber
                 + " E-mail: " + eMail
-                + " Aktivitetsstatus: " + activityStatus
-                + " Medlemsnr: " + memberNr;
+                + " Aktivitetsstatus: " + activityStatus;
     }
 }
