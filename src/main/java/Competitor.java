@@ -1,6 +1,6 @@
 import java.time.LocalDate;
 
-public class Competitor extends Member{
+public class  Competitor extends Member{
 
     private Disciplin disciplin;
     private double performanceTime;
