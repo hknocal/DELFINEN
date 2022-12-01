@@ -8,6 +8,7 @@ public class Member {
     private int phoneNumber;
     private String eMail;
     private boolean activityStatus;
+    private int memberID;
 
     public Member(String name, String lastName, LocalDate birthDate, int phoneNumber, String eMail, boolean activityStatus) {
         this.name = name;
@@ -18,7 +19,21 @@ public class Member {
         this.activityStatus = activityStatus;
     }
 
+    public Member(String name, String lastName, LocalDate birthDate, int phoneNumber, String eMail, boolean activityStatus, int memberID) {
+        this.name = name;
+        this.lastName = lastName;
+        this.birthDate = birthDate;
+        this.phoneNumber = phoneNumber;
+        this.eMail = eMail;
+        this.activityStatus = activityStatus;
+        this.memberID = memberID;
+    }
+
     //Get metode
+
+    public int getMemberID() {
+        return memberID;
+    }
     public String getName() {
         return name;
     }
@@ -43,6 +58,10 @@ public class Member {
     }
 
     //Set metode
+
+    public void setMemberID(int memberID) {
+        this.memberID = memberID;
+    }
     public void setName(String name) {
         this.name = name;
     }
@@ -69,7 +88,8 @@ public class Member {
     @Override
     public String toString() {
         DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        return "Navn: " + name
+        return  "Medlemsnr: " + memberID
+                + " Navn: " + name
                 + " Efternavn: " + lastName
                 + " Fødselsdato: " + birthDate.format(dateFormat)
                 + " Telefonnr: " + phoneNumber

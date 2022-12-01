@@ -245,19 +245,16 @@ public class UI {
             }
         }
     }
-
     public void deleteMember() {
         try {
-            if (controller.getMemberDatabase().isEmpty()) {
-                System.out.println("Ingen medlemmer blev fundet. ");
-            }
+            System.out.println("Indtast medlems ID du vil slette: ");
+            int memberID = readInt();
             for (int i = 0; i < controller.getMemberDatabase().size(); i++) {
-                System.out.println("[" + i + "] " + controller.getMemberDatabase().get(i));
+                if (controller.getMemberDatabase().get(i).getMemberID() == memberID) {
+                    controller.getMemberDatabase().remove(controller.getMemberDatabase().get(i));
+                }
             }
-            System.out.println("Vælg det medlem du vil slette: ");
-            int number = readInt();
-            controller.deleteMember(number);
-            System.out.println("Medlem: " + number + " blev slettet.");
+            System.out.println("Medlem: " + memberID + " blev slettet.");
         } catch (Exception e) {
             System.out.println("Det var ikke muligt at slette medlemmet. Prøv igen");
         }
@@ -267,13 +264,14 @@ public class UI {
         DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         try {
             for (int i = 0; i < controller.getMemberDatabase().size(); i++) {
-                System.out.println("[" + i + "] " + controller.getMemberDatabase().get(i));
+                System.out.println(i + 1 + ": " + controller.getMemberDatabase().get(i));
             }
+
             System.out.println("Vælg hvilket medlem du vil redigere: ");
             int number = sc.nextInt();
             sc.nextLine();
 
-            Member editMember = controller.getMemberDatabase().get(number);
+            Member editMember = controller.getMemberDatabase().get(number - 1);
             System.out.println("Redigerer medlem: " + editMember.getName() + editMember.getLastName());
             System.out.println("Indtast dine ændringer og tryk ENTER. Hvis du ikke ønsker at redigere, så tryk ENTER");
 
@@ -323,12 +321,12 @@ public class UI {
     public void searchMembers() {
         System.out.print("Indtast søgekriterie: ");
         String searchCriteria = sc.next();
-        ArrayList <Member> searchResult = controller.searchDB(searchCriteria);
+        ArrayList<Member> searchResult = controller.searchDB(searchCriteria);
         if (searchResult.isEmpty()) {
             System.out.println("Intet medlem fundet");
         }
         System.out.println("Medlem fundet:");
-        for (Member member : searchResult){
+        for (Member member : searchResult) {
             System.out.println(member);
         }
     }

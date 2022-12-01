@@ -23,11 +23,6 @@ public class Controller {
     public ArrayList<Member> getMemberDatabase() {
         return database.getMemberDatabase();
     }
-
-    public void deleteMember(int number) {
-        database.getMemberDatabase().remove(number);
-    }
-
     public ArrayList <Member> searchDB (String searchCriteria) {
         return database.searchDB(searchCriteria);
     }
