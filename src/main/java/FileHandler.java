@@ -4,16 +4,42 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import static java.lang.String.valueOf;
+
 public class FileHandler {
     File memberList = new File("src/memberList.csv");
-    FileWriter writer;
+    File performanceList = new File("src/performanceList.csv");
 
+    public void savePerformanceData(ArrayList<Member> memberDatabase) {
+        try {
+            FileWriter writer = new FileWriter(performanceList);
+            for (Member member : memberDatabase) {
+                if (member instanceof Competitor) {
+                    for (Performance p : ((Competitor) member).getPerformances()) {
+                        writer.write(member.getMemberID() + "," + p.getDate() + "," + p.getLocation() + "," + p.getDisciplin() + "," + p.getPerformanceTime() + "\n");
+                    }
+                }
+            }
+            writer.close();
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+        }
+    }
     public void saveToDB(ArrayList<Member> memberDatabase) {
         try {
-            writer = new FileWriter(memberList);
+            FileWriter writer = new FileWriter(memberList);
             for (Member member : memberDatabase) {
-                writer.write(member.getName() + "," + member.getLastName() + "," + member.getBirthDate()
-                        + "," + member.getPhoneNumber() + "," + member.geteMail() + "," + member.isActivityStatus() + "," + member.getMemberID() + "\n");
+                writer.write(member.getName() + ",");
+                writer.write(member.getLastName() + ",");
+                writer.write(member.getBirthDate() + ",");
+                writer.write(member.getPhoneNumber() + ",");
+                writer.write(member.geteMail() + ",");
+                writer.write(member.isActivityStatus() + ",");
+                writer.write(member.getMemberID()+ ",");
+                if (member instanceof Competitor) {
+                    writer.write(valueOf(true));
+                }
+                writer.write("\n");
             }
             writer.close();
         } catch (Exception e) {
@@ -21,6 +47,33 @@ public class FileHandler {
         }
     }
 
+    public void loadPerformanceData (Database db) {
+
+        try {
+            Scanner sc = new Scanner(performanceList);
+            while (sc.hasNextLine()) {
+                String[] line = sc.nextLine().split(",");
+                int memberId = Integer.parseInt(line[0]);
+
+                // Find member objekt, som skal være af typen competitor
+                Competitor competitor = (Competitor) db.findMember(memberId);
+                Performance performance = new Performance(
+                        LocalDate.parse(line[1]),
+                        line[2],
+                        Disciplin.valueOf(line[3]),
+                        Double.parseDouble(line[4])
+                );
+
+                competitor.addPerformance(performance);
+
+            }
+            sc.close();
+
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+        }
+
+    }
     public ArrayList<Member> loadDB() {
         ArrayList<Member> memberDatabase = new ArrayList<>();
         try {

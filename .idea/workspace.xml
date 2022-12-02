@@ -4,23 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" name="Changes" comment="auto assign of member id now working">
+    <list default="true" id="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" name="Changes" comment="working on register performance data">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Performance.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/performanceList.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Competitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Competitor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Database.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/FileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FileHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Member.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/UI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/memberList.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/memberList.csv" afterDir="false" />
     </list>
-    <list id="29609cd6-3730-481d-8951-f5086cb76a76" name="Changes by Zana" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/UI.java" afterDir="false" />
-    </list>
-    <list id="9fc52274-d2a7-4cd1-bdd8-41db89bc4215" name="Changes by 冷天空" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/Disciplin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Disciplin.java" afterDir="false" />
-    </list>
+    <list id="9fc52274-d2a7-4cd1-bdd8-41db89bc4215" name="Changes by 冷天空" comment="Changes by 冷天空 (magnus)" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,53 +25,13 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/main/java/UI.java">
-      <ranges>
-        <range start1="1" end1="1" start2="1" end2="2" changelist="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" />
-        <range start1="41" end1="41" start2="42" end2="44" changelist="29609cd6-3730-481d-8951-f5086cb76a76" />
-        <range start1="46" end1="46" start2="49" end2="74" changelist="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" />
-        <range start1="49" end1="49" start2="77" end2="80" changelist="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" />
-        <range start1="50" end1="51" start2="81" end2="83" changelist="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" />
-        <range start1="53" end1="54" start2="85" end2="99" changelist="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" />
-        <range start1="57" end1="61" start2="102" end2="107" changelist="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" />
-        <range start1="62" end1="67" start2="108" end2="118" changelist="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" />
-        <range start1="68" end1="69" start2="119" end2="131" changelist="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" />
-        <range start1="71" end1="73" start2="133" end2="135" changelist="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" />
-        <range start1="75" end1="76" start2="137" end2="138" changelist="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" />
-        <range start1="82" end1="84" start2="144" end2="172" changelist="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" />
-        <range start1="87" end1="88" start2="175" end2="176" changelist="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" />
-        <range start1="161" end1="162" start2="249" end2="249" changelist="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" />
-        <range start1="166" end1="167" start2="253" end2="253" changelist="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" />
-        <range start1="193" end1="194" start2="279" end2="279" changelist="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" />
-        <range start1="206" end1="206" start2="291" end2="292" changelist="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" />
-        <range start1="212" end1="214" start2="298" end2="305" changelist="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" />
-        <range start1="247" end1="247" start2="338" end2="339" changelist="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" />
-        <range start1="249" end1="250" start2="341" end2="342" changelist="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" />
-        <range start1="265" end1="271" start2="357" end2="359" changelist="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" />
-        <range start1="273" end1="275" start2="361" end2="379" changelist="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" />
-        <range start1="278" end1="279" start2="382" end2="383" changelist="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" />
-        <range start1="281" end1="282" start2="385" end2="386" changelist="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" />
-        <range start1="284" end1="285" start2="388" end2="389" changelist="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" />
-        <range start1="287" end1="288" start2="391" end2="392" changelist="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" />
-        <range start1="290" end1="291" start2="394" end2="395" changelist="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" />
-        <range start1="293" end1="294" start2="397" end2="398" changelist="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" />
-        <range start1="296" end1="297" start2="400" end2="401" changelist="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" />
-        <range start1="299" end1="300" start2="403" end2="404" changelist="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" />
-        <range start1="302" end1="303" start2="406" end2="407" changelist="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" />
-        <range start1="305" end1="306" start2="409" end2="410" changelist="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" />
-        <range start1="308" end1="309" start2="412" end2="413" changelist="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" />
-        <range start1="311" end1="312" start2="415" end2="416" changelist="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" />
-      </ranges>
-    </file>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -92,10 +48,11 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "codeWithMe.voiceChat.enabledByDefault": "false",
+    "database.data.extractors.current.export.id": "Comma-separated (CSV)_id",
     "last_opened_file_path": "D:/Datamatik/1 semester CAY/Angelo, Azat, Julius, David og Jonathan (5)",
     "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "preferences.lookFeel"
   }
 }]]></component>
@@ -128,7 +85,7 @@
       <workItem from="1669623607826" duration="2987000" />
       <workItem from="1669796111342" duration="10000" />
       <workItem from="1669799721039" duration="14637000" />
-      <workItem from="1669887240166" duration="29241000" />
+      <workItem from="1669887240166" duration="53552000" />
     </task>
     <task id="LOCAL-00001" summary="setup gitignore file">
       <created>1669120697504</created>
@@ -193,7 +150,28 @@
       <option name="project" value="LOCAL" />
       <updated>1669888193104</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="working on register performance data">
+      <created>1669940576767</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1669940576767</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Changes by Zana">
+      <created>1669940581666</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1669940581666</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Changes by 冷天空 (magnus)">
+      <created>1669940591157</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1669940591157</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -214,12 +192,14 @@
     <MESSAGE value="setup gitignore file" />
     <MESSAGE value="setup classes" />
     <MESSAGE value="crud methods now in working condition" />
-    <MESSAGE value="Changes by Zana" />
     <MESSAGE value="wrapped delete in a try catch to handle exceptions" />
     <MESSAGE value="added do while and try catch to add method to handle datetime exceptions. added if statement to handle userinput to whether member is active/inactive" />
     <MESSAGE value="auto assign of member id now working" />
     <MESSAGE value="Changes by 冷天空 (magnus lol)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changes by 冷天空 (magnus lol)" />
+    <MESSAGE value="working on register performance data" />
+    <MESSAGE value="Changes by Zana" />
+    <MESSAGE value="Changes by 冷天空 (magnus)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes by 冷天空 (magnus)" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -227,6 +207,8 @@
         <watch expression="members.get(i)" language="JAVA" />
         <watch expression="getMemberCounter()" language="JAVA" />
         <watch expression="memberCounter" language="JAVA" />
+        <watch expression="date" />
+        <watch expression="date" />
       </configuration>
     </watches-manager>
   </component>

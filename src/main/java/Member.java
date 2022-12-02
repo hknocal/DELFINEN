@@ -9,10 +9,6 @@ public class Member {
     private String eMail;
     private boolean activityStatus;
     private int memberID;
-
-    public Member () { // default constructor
-    }
-
     public Member(String name, String lastName, LocalDate birthDate, int phoneNumber, String eMail, boolean activityStatus) {
         this.name = name;
         this.lastName = lastName;

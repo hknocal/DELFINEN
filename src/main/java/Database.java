@@ -3,14 +3,9 @@ import java.util.ArrayList;
 
 public class Database {
     private ArrayList<Member> memberDatabase = new ArrayList<>(); //Members gemmes i vores arraylist
-    private ArrayList<Competitor> performanceDatabase = new ArrayList<>();
     private int memberCounter = 0;
 
     public Database() {
-    }
-
-    public ArrayList <Competitor> getPerformanceDatabase() {
-        return performanceDatabase;
     }
     public ArrayList<Member> getMemberDatabase() { //Get metode to our arraylist
         return memberDatabase;
@@ -23,8 +18,8 @@ public class Database {
         memberDatabase.add(member);
     }
 
-    public void addCompetitiveMember(String name, String lastName, LocalDate birthDate, int phoneNumber, String eMail, boolean activityStatus, boolean isCompetitive) {
-        Competitor competitor = new Competitor(name, lastName, birthDate, phoneNumber, eMail, activityStatus, isCompetitive);
+    public void addCompetitiveMember(String name, String lastName, LocalDate birthDate, int phoneNumber, String eMail, boolean activityStatus) {
+        Competitor competitor = new Competitor(name, lastName, birthDate, phoneNumber, eMail, activityStatus);
         competitor.setMemberID(getMemberCounter());
         memberDatabase.add(competitor);
     }
@@ -40,6 +35,15 @@ public class Database {
             }
         }
         return searchResult;
+    }
+
+    public Member findMember(int memberID) {
+        for (Member member : memberDatabase) {
+            if(member.getMemberID() == memberID) {
+                return member;
+            }
+        }
+        return null;
     }
 
     public void setMemberDatabase(ArrayList<Member> memberDatabase) {
@@ -61,6 +65,10 @@ public class Database {
     private int getMemberCounter() {
         memberCounter = memberCounter+1;
         return memberCounter;
+    }
+    public void addPerformanceTime(int memberID, Disciplin disciplin, double performanceTime, LocalDate date, String lokation) {
+        Competitor assignedMember = (Competitor) findMember(memberID);
+        assignedMember.setPerformanceTime(disciplin, performanceTime, date, lokation);
     }
 }
 

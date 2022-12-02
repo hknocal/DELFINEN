@@ -40,20 +40,24 @@ public class UI {
     private void trainerHandling() {
         System.out.println("""
                 1. Registrer træning
-                2. Vis konkurrencemedlemmer
-                3. Top 5 
+                2. Vis træningsdata
+                3. Vis konkurrencemedlemmer
+                4. Top 5 
                 """);
         switch (readInt()) {
             case 1:
                 registerPerformance();
                 break;
             case 2:
-                showCompetitiveMembers();
+                showPerformance();
                 break;
             case 3:
-                topPerformers();
+                showCompetitiveMembers();
                 break;
             case 4:
+                topPerformers();
+                break;
+            case 5:
                 //Something here
                 break;
             default:
@@ -78,8 +82,9 @@ public class UI {
     public int calculateAge(LocalDate birthDate, LocalDate currentDate) {
         return Period.between(birthDate, currentDate).getYears();
     }
-    public void registerPerformance() {
 
+    public void registerPerformance() {
+        // PRINT
         System.out.println("PERFORMANCE REGISTRERING FOR KONKURRENCEUDØVERE:");
         for (Member member : controller.getMemberDatabase()) {
             if (member instanceof Competitor) {
@@ -88,7 +93,6 @@ public class UI {
         }
 
         // MEDLEM STAMDATA
-
         System.out.print("\n" + "Indtast medlems-ID: ");
         int memberID = sc.nextInt();
         sc.nextLine();
@@ -99,27 +103,6 @@ public class UI {
                 foundMember = controller.getMemberDatabase().get(i);
             }
         }
-
-        String name = foundMember.getName();
-        String lastName = foundMember.getLastName();
-
-        // test
-        System.out.println(name + "," + lastName + "," + memberID);
-
-        // FØDSELSDATO
-        int age = calculateAge(foundMember.getBirthDate(), LocalDate.now());
-        System.out.println("Alder: " + age);
-
-        boolean isSenior = true;
-
-        if (age < 18) {
-            isSenior = false;
-        } else if (age > 18) {
-            isSenior = true;
-        }
-
-        System.out.println(isSenior + "\n");
-
         // DISCIPLIN
 
         Disciplin disciplins[] = Disciplin.values();
@@ -129,10 +112,10 @@ public class UI {
         }
         System.out.println();
         System.out.println("Indtast valgt disciplin: ");
-        Disciplin disciplin = Disciplin.valueOf(sc.nextLine());
+        Disciplin disciplin = Disciplin.valueOf(sc.nextLine().toUpperCase());
 
-        // TID
-        System.out.println("Indtast tid i formatet MM.SS (fx 03.10");
+        // PERFORMANCE TID
+        System.out.println("Indtast tid i formatet MM,SS (fx 03,10)");
         double performanceTime = sc.nextDouble();
 
         // DATO
@@ -143,23 +126,32 @@ public class UI {
         date = LocalDate.parse(enteredDate, dateTimeFormat);
 
         // LOKATION
+        System.out.println("Indtast lokation");
+        String lokation = sc.next();
 
-        // Boolean her??
+        controller.addPerformanceTime(memberID, disciplin, performanceTime, date, lokation);
+    }
+    public void showPerformance() {
+        System.out.println("""
+                1. Tjek et medlem
+                2. Tjek alle medlemmer
+                """);
+        switch (readInt()) {
+            case 1:
+                System.out.print("Indtast medlemsnr: ");
+                int read = sc.nextInt();
+                Competitor member = (Competitor) controller.findMember(read);
+                for (Performance p : member.getPerformances()) {
+                    System.out.println(p);
+                }
+                break;
+            case 2:
 
+                break;
+            default:
+                System.out.println("Fuck off. Try again");
         }
-
-        //controller.addPerformanceTime(foundMember);
-
-        // select member - for loop af medlemmer, get/select the "found member" ->  getMemberID, getName, getLastName, birthday
-        // if birthday < 18 == junior, else if birthday > 18 == senior.
-        // select discipline - selecter disciplin ud fra enum disciplinen
-        // performance time in MM:SS double - registrer tidsperformance for den valgte disciplin
-        // enter date - register localDate
-        // enter location (internal/external) - internal = trænining, stævne = external til top5 liste
-        // performanceDatabase.add(memberData, chosenDiscipline, performanceTime, date, location)
-        // 42,Hakan,Ocal,Crawl,42:45:,01/01/2022,External
-        // Sortering of the top 5 values of 5 disciplines
-
+    }
     private void memberHandling() {
         System.out.println();
         System.out.println(""" 
@@ -285,13 +277,7 @@ public class UI {
             activityStatus = true;
         }
 
-        System.out.println("Er medlemmet konkurrencesvømmer? (Svar JA, ellers er man motionist");
-        boolean isCompetitive = false;
-        String readCompetitive = sc.next().toLowerCase();
-        if (readCompetitive.contentEquals("ja")) {
-            isCompetitive = true;
-        }
-        controller.addCompetitiveMember(name, lastName, birthDate, phoneNumber, eMail, activityStatus, isCompetitive);
+        controller.addCompetitiveMember(name, lastName, birthDate, phoneNumber, eMail, activityStatus);
     }
 
     private LocalDate addBirthday() {
