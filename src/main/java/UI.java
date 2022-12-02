@@ -40,6 +40,8 @@ public class UI {
     private void trainerHandling() {
         System.out.println("""
                 1. Registrer træning
+                2. Vis konkurrencemedlemmer
+                3. Top 5 
                 """);
         switch (readInt()) {
             case 1:
