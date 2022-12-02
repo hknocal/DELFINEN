@@ -1,3 +1,3 @@
 public enum Disciplin {
-    BUTTERFLY, CRAWL;
+    BUTTERFLY, CRAWL, RYGCRAWL, BRYSTSVØMNING;
 }
