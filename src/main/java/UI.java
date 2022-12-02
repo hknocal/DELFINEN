@@ -3,6 +3,7 @@ import java.time.Period;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -267,6 +268,9 @@ public class UI {
         }
 
         controller.addCompetitiveMember(name, lastName, birthDate, phoneNumber, eMail, activityStatus);
+    }
+    public void sortByPerformanceTime(){
+
     }
 
     private LocalDate addBirthday() {
