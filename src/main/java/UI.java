@@ -131,25 +131,16 @@ public class UI {
 
         controller.addPerformanceTime(memberID, disciplin, performanceTime, date, lokation);
     }
+
     public void showPerformance() {
-        System.out.println("""
-                1. Tjek et medlems performance
-                """);
-        switch (readInt()) {
-            case 1:
-                System.out.print("Indtast medlemsnr: ");
-                int read = sc.nextInt();
-                Competitor member = (Competitor) controller.findMember(read);
-                for (Performance p : member.getPerformances()) {
-                    System.out.println(p);
-                }
-                break;
-            case 2:
-                break;
-            default:
-                System.out.println("Fuck off. Try again");
+        System.out.print("Indtast medlemsnr: ");
+        int read = sc.nextInt();
+        Competitor member = (Competitor) controller.findMember(read);
+        for (Performance p : member.getPerformances()) {
+            System.out.println(p);
         }
     }
+
     private void memberHandling() {
         System.out.println();
         System.out.println(""" 
