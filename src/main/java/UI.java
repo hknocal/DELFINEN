@@ -1,4 +1,5 @@
 import java.time.LocalDate;
+import java.time.Period;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
@@ -44,48 +45,122 @@ public class UI {
             case 1:
                 registerPerformance();
                 break;
+            case 2:
+                showCompetitiveMembers();
+                break;
+            case 3:
+                topPerformers();
+                break;
+            case 4:
+                //Something here
+                break;
+            default:
+                System.out.println("Forkert valg. Prøv igen");
+                break;
         }
     }
 
+    public void topPerformers() {
+        switch (readInt()) {
+            case 1:
+                System.out.println("Senior");
+                break;
+            case 2:
+                System.out.println("Junior");
+            default:
+                System.out.println("Forkert valg. Prøv igen");
+                break;
+        }
+    }
+
+    public int calculateAge(LocalDate birthDate, LocalDate currentDate) {
+        return Period.between(birthDate, currentDate).getYears();
+    }
     public void registerPerformance() {
-        // Choose competitor
+
+        System.out.println("PERFORMANCE REGISTRERING FOR KONKURRENCEUDØVERE:");
         for (Member member : controller.getMemberDatabase()) {
             if (member instanceof Competitor) {
-                System.out.println(member);
+                System.out.println("Medlemsnr: " + member.getMemberID() + " Navn: " + member.getName() + " Efternavn: " + member.getLastName());
             }
         }
 
-        System.out.println("Vælg medlem");
-        String competitor = sc.next();
-        ArrayList<Member> searchList = controller.searchDB(competitor);
-        Member chosenMember = searchList.get(0);
+        // MEDLEM STAMDATA
 
-        // Choose discipline
+        System.out.print("\n" + "Indtast medlems-ID: ");
+        int memberID = sc.nextInt();
+        sc.nextLine();
+
+        Member foundMember = null;
+        for (int i = 0; i < controller.getMemberDatabase().size(); i++) {
+            if (controller.getMemberDatabase().get(i).getMemberID() == memberID) {
+                foundMember = controller.getMemberDatabase().get(i);
+            }
+        }
+
+        String name = foundMember.getName();
+        String lastName = foundMember.getLastName();
+
+        // test
+        System.out.println(name + "," + lastName + "," + memberID);
+
+        // FØDSELSDATO
+        int age = calculateAge(foundMember.getBirthDate(), LocalDate.now());
+        System.out.println("Alder: " + age);
+
+        boolean isSenior = true;
+
+        if (age < 18) {
+            isSenior = false;
+        } else if (age > 18) {
+            isSenior = true;
+        }
+
+        System.out.println(isSenior + "\n");
+
+        // DISCIPLIN
+
         Disciplin disciplins[] = Disciplin.values();
         System.out.println("Discipliner:");
         for (Disciplin d : disciplins) {
             System.out.println(d);
         }
-        System.out.print("Vælg disciplin: ");
+        System.out.println();
+        System.out.println("Indtast valgt disciplin: ");
         Disciplin disciplin = Disciplin.valueOf(sc.nextLine());
 
-        // Register performance time in minute,second format
-        System.out.println("Indtast tid i formatet mm.ss");
+        // TID
+        System.out.println("Indtast tid i formatet MM.SS (fx 03.10");
         double performanceTime = sc.nextDouble();
 
-        // Register date DD/MM/YYY
+        // DATO
         LocalDate date = null;
         DateTimeFormatter dateTimeFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         System.out.println("Indtast dato");
         String enteredDate = sc.next();
         date = LocalDate.parse(enteredDate, dateTimeFormat);
 
-        //controller.registerPerformance(competitor, disciplin, performanceTime, date);
-    }
+        // LOKATION
+
+        // Boolean her??
+
+        }
+
+        //controller.addPerformanceTime(foundMember);
+
+        // select member - for loop af medlemmer, get/select the "found member" ->  getMemberID, getName, getLastName, birthday
+        // if birthday < 18 == junior, else if birthday > 18 == senior.
+        // select discipline - selecter disciplin ud fra enum disciplinen
+        // performance time in MM:SS double - registrer tidsperformance for den valgte disciplin
+        // enter date - register localDate
+        // enter location (internal/external) - internal = trænining, stævne = external til top5 liste
+        // performanceDatabase.add(memberData, chosenDiscipline, performanceTime, date, location)
+        // 42,Hakan,Ocal,Crawl,42:45:,01/01/2022,External
+        // Sortering of the top 5 values of 5 disciplines
 
     private void memberHandling() {
         System.out.println();
-        System.out.println("""
+        System.out.println(""" 
                 1. Opret medlem
                 2. Rediger medlem
                 3. Slet medlem
@@ -159,12 +234,10 @@ public class UI {
         System.out.println("""
                 1. Tilføj motionist
                 2. Tilføj konkurrenceudøver
-                3. Vis test
                 """);
         switch (readInt()) {
             case 1 -> addMember();
             case 2 -> addCompetitiveMember();
-            case 3 -> showCompetitiveMembers();
         }
     }
 
@@ -191,7 +264,6 @@ public class UI {
     }
 
     public void addCompetitiveMember() {
-
         System.out.println("Indtast navn");
         String name = sc.next();
         System.out.println("Indtast efternavn");
@@ -204,14 +276,20 @@ public class UI {
         System.out.println("Indtast e-mail");
         String eMail = sc.next();
         System.out.println("Er medlemmet aktivt? (Svar JA, ellers er medlemmet inaktivt)");
+
         boolean activityStatus = false;
         String isActivityStatus = sc.next().toLowerCase();
         if (isActivityStatus.contentEquals("ja")) {
             activityStatus = true;
         }
 
-        controller.addCompetitiveMember(name, lastName, birthDate, phoneNumber, eMail, activityStatus);
-
+        System.out.println("Er medlemmet konkurrencesvømmer? (Svar JA, ellers er man motionist");
+        boolean isCompetitive = false;
+        String readCompetitive = sc.next().toLowerCase();
+        if (readCompetitive.contentEquals("ja")) {
+            isCompetitive = true;
+        }
+        controller.addCompetitiveMember(name, lastName, birthDate, phoneNumber, eMail, activityStatus, isCompetitive);
     }
 
     private LocalDate addBirthday() {
@@ -245,9 +323,10 @@ public class UI {
             }
         }
     }
+
     public void deleteMember() {
         try {
-            System.out.println("Indtast medlems ID du vil slette: ");
+            System.out.print("Indtast medlems-ID du vil slette: ");
             int memberID = readInt();
             for (int i = 0; i < controller.getMemberDatabase().size(); i++) {
                 if (controller.getMemberDatabase().get(i).getMemberID() == memberID) {
@@ -263,53 +342,65 @@ public class UI {
     public void editMember() {
         DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         try {
-            for (int i = 0; i < controller.getMemberDatabase().size(); i++) {
-                System.out.println(i + 1 + ": " + controller.getMemberDatabase().get(i));
-            }
-
-            System.out.println("Vælg hvilket medlem du vil redigere: ");
-            int number = sc.nextInt();
+            System.out.print("Indtast medlems-ID på medlem du vil redigere: ");
+            int memberID = sc.nextInt();
             sc.nextLine();
 
-            Member editMember = controller.getMemberDatabase().get(number - 1);
-            System.out.println("Redigerer medlem: " + editMember.getName() + editMember.getLastName());
+            Member foundMember = null;
+            //int foundMemberIndex = -1;
+            for (int i = 0; i < controller.getMemberDatabase().size(); i++) {
+                if (controller.getMemberDatabase().get(i).getMemberID() == memberID) {
+                    foundMember = controller.getMemberDatabase().get(i);
+                    //foundMemberIndex = i;
+                    break;
+                }
+            }
+
+            if (foundMember == null) {
+                System.out.println("Ikke fundet!");
+                return;
+            }
+
+            System.out.println("Redigerer medlemsnr: " + foundMember.getMemberID());
+            System.out.println("Medlemsinfo: " + foundMember.getName() + " " + foundMember.getLastName());
+            System.out.println();
             System.out.println("Indtast dine ændringer og tryk ENTER. Hvis du ikke ønsker at redigere, så tryk ENTER");
 
             //Redigering for navn
-            System.out.println("Name: " + editMember.getName());
+            System.out.println("Name: " + foundMember.getName());
             System.out.println("Skriv nyt navn: ");
             String newName = sc.nextLine();
-            if (!newName.isEmpty()) editMember.setName(newName);
+            if (!newName.isEmpty()) foundMember.setName(newName);
 
             //Redigering for efternavn
-            System.out.println("Efternavn: " + editMember.getLastName());
+            System.out.println("Efternavn: " + foundMember.getLastName());
             System.out.println("Skriv et nyt efternavn");
             String newLastName = sc.nextLine();
-            if (!newLastName.isEmpty()) editMember.setLastName(newLastName);
+            if (!newLastName.isEmpty()) foundMember.setLastName(newLastName);
 
             //Redigering for føds
-            System.out.println("Fødselsdato: " + editMember.getBirthDate().format(dateFormat));
+            System.out.println("Fødselsdato: " + foundMember.getBirthDate().format(dateFormat));
             System.out.println("Indtast en ny fødselsdato DD/MM/YYYY");
             String newBirthDate = sc.nextLine();
-            if (!newBirthDate.isEmpty()) editMember.setBirthDate(LocalDate.parse(newBirthDate, dateFormat));
+            if (!newBirthDate.isEmpty()) foundMember.setBirthDate(LocalDate.parse(newBirthDate, dateFormat));
 
             //Redigering for tlf nr
-            System.out.println("Telefonnummer: " + editMember.getPhoneNumber());
+            System.out.println("Telefonnummer: " + foundMember.getPhoneNumber());
             System.out.println("Indtast et nyt telefonnummer");
             String newPhoneNumber = sc.nextLine();
-            if (!newPhoneNumber.isEmpty()) editMember.setPhoneNumber(Integer.parseInt(newPhoneNumber));
+            if (!newPhoneNumber.isEmpty()) foundMember.setPhoneNumber(Integer.parseInt(newPhoneNumber));
 
             //Redigering for email
-            System.out.println("Email: " + editMember.geteMail());
+            System.out.println("Email: " + foundMember.geteMail());
             System.out.println("Indtast en ny mailadresse");
             String newEmail = sc.nextLine();
-            if (!newEmail.isEmpty()) editMember.seteMail(newEmail);
+            if (!newEmail.isEmpty()) foundMember.seteMail(newEmail);
 
             //Redigering for aktiv eller passiv
-            System.out.println("Aktiv eller passiv: " + editMember.isActivityStatus());
+            System.out.println("Aktiv eller passiv: " + foundMember.isActivityStatus());
             System.out.println("Indtast et nyt medlemskabstype");
             String newType = sc.nextLine();
-            if (!newEmail.isEmpty()) editMember.setActivityStatus(Boolean.parseBoolean(newType));
+            if (!newEmail.isEmpty()) foundMember.setActivityStatus(Boolean.parseBoolean(newType));
 
             //Servicemeddelse
             System.out.println("Dine ændringer er blevet gemt.");

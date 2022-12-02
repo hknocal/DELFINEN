@@ -3,11 +3,15 @@ import java.util.ArrayList;
 
 public class Database {
     private ArrayList<Member> memberDatabase = new ArrayList<>(); //Members gemmes i vores arraylist
+    private ArrayList<Competitor> performanceDatabase = new ArrayList<>();
     private int memberCounter = 0;
 
     public Database() {
     }
 
+    public ArrayList <Competitor> getPerformanceDatabase() {
+        return performanceDatabase;
+    }
     public ArrayList<Member> getMemberDatabase() { //Get metode to our arraylist
         return memberDatabase;
     }
@@ -19,8 +23,8 @@ public class Database {
         memberDatabase.add(member);
     }
 
-    public void addCompetitiveMember(String name, String lastName, LocalDate birthDate, int phoneNumber, String eMail, boolean activityStatus) {
-        Competitor competitor = new Competitor(name, lastName, birthDate, phoneNumber, eMail, activityStatus);
+    public void addCompetitiveMember(String name, String lastName, LocalDate birthDate, int phoneNumber, String eMail, boolean activityStatus, boolean isCompetitive) {
+        Competitor competitor = new Competitor(name, lastName, birthDate, phoneNumber, eMail, activityStatus, isCompetitive);
         competitor.setMemberID(getMemberCounter());
         memberDatabase.add(competitor);
     }
@@ -59,8 +63,4 @@ public class Database {
         return memberCounter;
     }
 }
-
-//TODO Søgefunktion - skal placeres i DB
-//TODO Edit funktion - skal kunne fremsøge på kriterier istedet for for loop med int.
-//TODO ENUM til discipliner
 

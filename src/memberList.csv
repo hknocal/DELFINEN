@@ -4,4 +4,7 @@ TestnavnC,TestefternavnC,2001-01-01,11111111,test@test.com,true,3
 TestnavnD,TestefternavnD,2001-01-01,11111111,test@test.com,true,4
 TestnavnE,TestefternavnE,2001-01-01,11111111,test@test.com,true,5
 TestnavnF,TestefternavnF,2001-01-01,11111111,test@test.com,true,6
-TestnavnG,TestefternavnG,2001-01-01,11111111,test@test.com,true,7
+KonkurrencesvømmerA,KonkurrencesvømmerA,1996-01-26,11111111,test@test.com,true,7,false
+KonkurrencesvømmerB,KonkurrencesvømmerB,2010-01-01,11111111,test@test.com,true,8,false
+KonkurrencesvømmerC,KonkurrencesvømmerC,2001-01-01,11111111,test@test.com,true,9,false
+KonkurrencesvømmerD,KonkurrencesvømmerD,2001-01-01,11111111,test@test.com,true,10,false
