@@ -133,8 +133,7 @@ public class UI {
     }
     public void showPerformance() {
         System.out.println("""
-                1. Tjek et medlem
-                2. Tjek alle medlemmer
+                1. Tjek et medlems performance
                 """);
         switch (readInt()) {
             case 1:
@@ -146,7 +145,6 @@ public class UI {
                 }
                 break;
             case 2:
-
                 break;
             default:
                 System.out.println("Fuck off. Try again");
