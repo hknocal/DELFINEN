@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" name="Changes" comment="performance registration now working - saving and loading from filehandler.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/PerformanceTimeComparator.java" afterDir="false" />
+    <list default="true" id="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" name="Changes" comment="Made an comparator class, not done yet">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/UI.java" afterDir="false" />
     </list>
@@ -171,7 +170,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669990139022</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Made an comparator class, not done yet">
+      <created>1670005991105</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1670005991105</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -200,7 +206,8 @@
     <MESSAGE value="Changes by Zana" />
     <MESSAGE value="Changes by 冷天空 (magnus)" />
     <MESSAGE value="performance registration now working - saving and loading from filehandler." />
-    <option name="LAST_COMMIT_MESSAGE" value="performance registration now working - saving and loading from filehandler." />
+    <MESSAGE value="Made an comparator class, not done yet" />
+    <option name="LAST_COMMIT_MESSAGE" value="Made an comparator class, not done yet" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

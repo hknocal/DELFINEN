@@ -71,9 +71,11 @@ public class UI {
         switch (readInt()) {
             case 1:
                 System.out.println("Senior");
+                sortByPerformanceTime();
                 break;
             case 2:
                 System.out.println("Junior");
+                sortByPerformanceTime();
             default:
                 System.out.println("Forkert valg. Prøv igen");
                 break;
@@ -270,7 +272,13 @@ public class UI {
         controller.addCompetitiveMember(name, lastName, birthDate, phoneNumber, eMail, activityStatus);
     }
     public void sortByPerformanceTime(){
+        ArrayList <Performance> performanceArrayList = new ArrayList<>(); //Arraylist for sorting after performanceTime
 
+        Collections.sort(performanceArrayList, new PerformanceTimeComparator()); //Sorting method
+        for (Performance performance : performanceArrayList){ //For each loop
+            System.out.println(performance.getPerformanceTime() + " " + performance.getDate()
+                    + " " + performance.getLocation() + " " + performance.getDisciplin());
+        }
     }
 
     private LocalDate addBirthday() {
