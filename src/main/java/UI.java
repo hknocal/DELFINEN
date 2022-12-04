@@ -22,7 +22,7 @@ public class UI {
                     memberHandling();
                     break;
                 case 2:
-                    //Økonomi
+                    cashierUI();
                     break;
                 case 3:
                     trainerHandling();
@@ -58,9 +58,30 @@ public class UI {
             case 4:
                 topPerformers();
                 break;
-            case 5:
+            default:
+                System.out.println("Forkert valg. Prøv igen");
+                break;
+        }
+    }
+    public void cashierUI(){
+        System.out.println("""
+                1. Tilføj kontingent 
+                2. Rediger kontingent
+                3. Forventet indtjening
+                4. Oversigt over medlemmer i restance
+                """);
+        switch (readInt()){
+            case 1:
                 //Something here
                 break;
+            case 2:
+                //Something here
+                break;
+            case 3:
+                //Something here
+                break;
+            case 4:
+                //Something here
             default:
                 System.out.println("Forkert valg. Prøv igen");
                 break;
