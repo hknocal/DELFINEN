@@ -4,16 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" name="Changes" comment="Made an comparator class, not done yet">
-      <change afterPath="$PROJECT_DIR$/src/main/java/CompetitorComparator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Competitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Competitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Database.java" afterDir="false" />
+    <list default="true" id="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" name="Changes" comment="comparator semi-working">
       <change beforePath="$PROJECT_DIR$/src/main/java/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/UI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/performanceList.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/performanceList.csv" afterDir="false" />
     </list>
     <list id="d98bb795-b61d-48f5-abf9-17ed20cf79c7" name="Changes by Heval" comment="" />
+    <list id="eb9bf1c4-2e44-4da7-9af0-dd9b844a9db0" name="Changes by Zana" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -88,7 +83,7 @@
       <workItem from="1669796111342" duration="10000" />
       <workItem from="1669799721039" duration="14637000" />
       <workItem from="1669887240166" duration="56840000" />
-      <workItem from="1670226033195" duration="6531000" />
+      <workItem from="1670226033195" duration="6870000" />
     </task>
     <task id="LOCAL-00001" summary="setup gitignore file">
       <created>1669120697504</created>
@@ -188,7 +183,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670005991105</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="comparator semi-working">
+      <created>1670233336344</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1670233336344</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -218,7 +220,8 @@
     <MESSAGE value="Changes by 冷天空 (magnus)" />
     <MESSAGE value="performance registration now working - saving and loading from filehandler." />
     <MESSAGE value="Made an comparator class, not done yet" />
-    <option name="LAST_COMMIT_MESSAGE" value="Made an comparator class, not done yet" />
+    <MESSAGE value="comparator semi-working" />
+    <option name="LAST_COMMIT_MESSAGE" value="comparator semi-working" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

@@ -89,16 +89,8 @@ public class UI {
     }
 
     public void topPerformers() {
-        System.out.println("Tryk 1 for top performers test");
-
-        switch (readInt()) {
-            case 1:
-                sortByPerformanceTime();
-                break;
-            default:
-                System.out.println("Forkert valg. Prøv igen");
-                break;
-        }
+        // switch mfl. her
+        sortByPerformanceTime();
     }
 
     public int calculateAge(LocalDate birthDate, LocalDate currentDate) {
