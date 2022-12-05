@@ -7,7 +7,7 @@ import java.util.Collections;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class UI {
+public class  UI {
     Scanner sc = new Scanner(System.in);
     Controller controller = new Controller();
 
