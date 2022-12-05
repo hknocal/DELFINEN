@@ -38,4 +38,13 @@ public class Controller {
     public ArrayList <Competitor> showCompetitiveMembers() {
         return database.findCompetitiveMembers();
     }
+
+    public ArrayList<Competitor> getTop5Competitors(Disciplin disciplin) {
+        return database.getTop5Competitors(disciplin);
+
+    }
+
+    public ArrayList<Competitor> teamJunior() {
+        return database.teamJunior();
+    }
 }

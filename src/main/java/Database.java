@@ -1,5 +1,8 @@
+import java.lang.reflect.Array;
 import java.time.LocalDate;
+import java.time.Period;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Database {
     private ArrayList<Member> memberDatabase = new ArrayList<>(); //Members gemmes i vores arraylist
@@ -79,6 +82,35 @@ public class Database {
             }
         }
         return competitorMembers;
+    }
+
+    public int calculateAge(LocalDate birthDate, LocalDate currentDate) {
+        return Period.between(birthDate, currentDate).getYears();
+    }
+    public ArrayList <Competitor> teamJunior() {
+        ArrayList <Competitor> allCompetitors = findCompetitiveMembers();
+        ArrayList <Competitor> juniorMembers = new ArrayList<>();
+
+        for (Competitor competitor : allCompetitors) {
+            if(calculateAge(competitor.getBirthDate(), LocalDate.now()) <= 18) {
+                juniorMembers.add(competitor);
+            }
+        }
+        return juniorMembers;
+    }
+
+    public ArrayList<Competitor> getTop5Competitors(Disciplin disciplin) {
+        ArrayList<Competitor> allCompetitors = findCompetitiveMembers();
+        ArrayList<Competitor> filteredCompetitors = new ArrayList<>();
+
+        for(Competitor competitor : allCompetitors ) {
+            if(competitor.hasDiscipline(disciplin)) {
+                filteredCompetitors.add(competitor);
+            }
+        }
+        Collections.sort(filteredCompetitors, new CompetitorComparator());
+
+        return filteredCompetitors;
     }
 }
 

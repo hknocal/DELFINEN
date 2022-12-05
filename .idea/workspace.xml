@@ -4,11 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" name="Changes" comment="comparator semi-working">
+    <list default="true" id="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" name="Changes" comment="ui changes to acces top performers">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Competitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Competitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CompetitorComparator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CompetitorComparator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Database.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/UI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/performanceList.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/performanceList.csv" afterDir="false" />
+    </list>
+    <list id="1f1a5214-b18a-4003-b697-1f3a265a5a59" name="Changes by Heval" comment="" />
+    <list id="90800074-6d53-4d68-a022-f5f9cf679d73" name="Changes by Zana" comment="">
       <change beforePath="$PROJECT_DIR$/src/main/java/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/UI.java" afterDir="false" />
     </list>
-    <list id="d98bb795-b61d-48f5-abf9-17ed20cf79c7" name="Changes by Heval" comment="" />
-    <list id="eb9bf1c4-2e44-4da7-9af0-dd9b844a9db0" name="Changes by Zana" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,7 +31,38 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="uibranch" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="6b5bd6ae-866c-433d-84eb-43a5fe3ab56a" />
+        <option name="url" value="https://github.com/hknocal/DELFINEN.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/src/main/java/UI.java">
+      <ranges>
+        <range start1="9" end1="10" start2="9" end2="10" changelist="90800074-6d53-4d68-a022-f5f9cf679d73" />
+        <range start1="46" end1="46" start2="46" end2="47" changelist="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" />
+        <range start1="60" end1="60" start2="61" end2="64" changelist="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" />
+        <range start1="91" end1="93" start2="95" end2="108" changelist="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" />
+        <range start1="95" end1="97" start2="110" end2="128" changelist="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" />
+        <range start1="98" end1="98" start2="129" end2="149" changelist="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" />
+        <range start1="284" end1="291" start2="335" end2="335" changelist="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" />
+      </ranges>
+    </file>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -64,6 +103,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -83,7 +123,7 @@
       <workItem from="1669796111342" duration="10000" />
       <workItem from="1669799721039" duration="14637000" />
       <workItem from="1669887240166" duration="56840000" />
-      <workItem from="1670226033195" duration="6870000" />
+      <workItem from="1670226033195" duration="21166000" />
     </task>
     <task id="LOCAL-00001" summary="setup gitignore file">
       <created>1669120697504</created>
@@ -190,7 +230,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670233336344</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="ui changes to acces top performers">
+      <created>1670233606103</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1670233606103</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -201,7 +248,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="uibranch" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -221,7 +280,8 @@
     <MESSAGE value="performance registration now working - saving and loading from filehandler." />
     <MESSAGE value="Made an comparator class, not done yet" />
     <MESSAGE value="comparator semi-working" />
-    <option name="LAST_COMMIT_MESSAGE" value="comparator semi-working" />
+    <MESSAGE value="ui changes to acces top performers" />
+    <option name="LAST_COMMIT_MESSAGE" value="ui changes to acces top performers" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

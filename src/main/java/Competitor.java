@@ -31,14 +31,15 @@ public class Competitor extends Member {
 
     public Performance findBestPerformance() {
         Performance min = Collections.min(performances, new PerformanceTimeComparator());
-        /*double minimumTime = Double.MAX_VALUE;
-        for (Performance p : performances) {
-            if (p.getPerformanceTime() < minimumTime) {
-                minimumTime = p.getPerformanceTime();
+        return min;
+    }
+
+    public boolean hasDiscipline(Disciplin disciplin) {
+        for (Performance performance : performances) {
+            if (performance.getDisciplin() == disciplin) {
+                return true;
             }
         }
-        return minimumTime;
-    }*/
-        return min;
+        return false;
     }
 }
