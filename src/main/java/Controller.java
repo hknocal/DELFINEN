@@ -34,4 +34,8 @@ public class Controller {
     public void addPerformanceTime(int memberID, Disciplin disciplin, double performanceTime, LocalDate date, String lokation) {
         database.addPerformanceTime(memberID, disciplin, performanceTime, date, lokation);
     }
+
+    public ArrayList <Competitor> showCompetitiveMembers() {
+        return database.findCompetitiveMembers();
+    }
 }

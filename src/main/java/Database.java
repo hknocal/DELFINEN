@@ -70,5 +70,15 @@ public class Database {
         Competitor assignedMember = (Competitor) findMember(memberID);
         assignedMember.setPerformanceTime(disciplin, performanceTime, date, lokation);
     }
+
+    public ArrayList <Competitor> findCompetitiveMembers() {
+        ArrayList <Competitor> competitorMembers = new ArrayList<>();
+        for (Member member : memberDatabase) {
+            if (member instanceof Competitor) {
+                competitorMembers.add((Competitor) member);
+            }
+        }
+        return competitorMembers;
+    }
 }
 
