@@ -35,8 +35,14 @@ public class FileHandler {
                 writer.write(member.getPhoneNumber() + ",");
                 writer.write(member.geteMail() + ",");
                 writer.write(member.isActivityStatus() + ",");
-                writer.write(member.getMemberID()+ ",");
+                writer.write(member.getMemberID() + ",");
                 if (member instanceof Competitor) {
+                    writer.write(valueOf(true));
+                    writer.write(",");
+                }
+                if (!member.getHasPaid()) {
+                    writer.write(valueOf(false));
+                } else {
                     writer.write(valueOf(true));
                 }
                 writer.write("\n");
@@ -80,20 +86,8 @@ public class FileHandler {
             Scanner sc = new Scanner(memberList);
             while (sc.hasNextLine()) {
                 String[] line = sc.nextLine().split(",");
-                if (line.length == 7) {
+                if (line.length == 8) {
                     Member member = new Member(
-                            line[0],
-                            line[1],
-                            LocalDate.parse(line[2]),
-                            Integer.parseInt(line[3]),
-                            line[4],
-                            Boolean.parseBoolean(line[5]),
-                            Integer.parseInt(line[6])
-                    );
-                    memberDatabase.add(member);
-
-                } else if (line.length == 8) {
-                    Competitor competitor = new Competitor(
                             line[0],
                             line[1],
                             LocalDate.parse(line[2]),
@@ -102,6 +96,20 @@ public class FileHandler {
                             Boolean.parseBoolean(line[5]),
                             Integer.parseInt(line[6]),
                             Boolean.parseBoolean(line[7])
+                    );
+                    memberDatabase.add(member);
+
+                } else if (line.length == 9) {
+                    Competitor competitor = new Competitor(
+                            line[0],
+                            line[1],
+                            LocalDate.parse(line[2]),
+                            Integer.parseInt(line[3]),
+                            line[4],
+                            Boolean.parseBoolean(line[5]),
+                            Integer.parseInt(line[6]),
+                            Boolean.parseBoolean(line[7]),
+                            Boolean.parseBoolean(line[8])
                     );
                     memberDatabase.add(competitor);
                 }

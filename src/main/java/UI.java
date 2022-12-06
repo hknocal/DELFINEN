@@ -1,13 +1,11 @@
 import java.time.LocalDate;
-import java.time.Period;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class  UI {
+public class UI {
     Scanner sc = new Scanner(System.in);
     Controller controller = new Controller();
 
@@ -45,6 +43,7 @@ public class  UI {
                 3. Vis konkurrencemedlemmer
                 4. Top 5 
                 5. Team Junior
+                6. Team Senior
                 """);
         switch (readInt()) {
             case 1:
@@ -60,21 +59,36 @@ public class  UI {
                 topPerformers();
                 break;
             case 5:
-                System.out.println(controller.teamJunior());
+                teamJunior();
+                break;
+            case 6:
+                teamSenior();
                 break;
             default:
                 System.out.println("Forkert valg. Prøv igen");
                 break;
         }
     }
-    public void cashierUI(){
+
+    private void teamJunior() {
+        for (Competitor competitor : controller.teamJunior()) {
+            System.out.println(competitor);
+        }
+    }
+
+    private void teamSenior() {
+        for (Competitor competitor : controller.teamSenior()) {
+            System.out.println(competitor);
+        }
+    }
+
+    public void cashierUI() {
         System.out.println("""
-                1. Tilføj kontingent 
-                2. Rediger kontingent
-                3. Forventet indtjening
-                4. Oversigt over medlemmer i restance
+                1. Registrer kontingent 
+                2. Forventet indtjening
+                3. Oversigt over medlemmer i restance
                 """);
-        switch (readInt()){
+        switch (readInt()) {
             case 1:
                 //Something here
                 break;
@@ -82,10 +96,8 @@ public class  UI {
                 //Something here
                 break;
             case 3:
-                //Something here
+                missingPayments();
                 break;
-            case 4:
-                //Something here
             default:
                 System.out.println("Forkert valg. Prøv igen");
                 break;
@@ -98,6 +110,7 @@ public class  UI {
                 2. TOP 5 BUTTERFLY
                 3. TOP 5 BRYST
                 4. TOP 5 RYG
+                5. TOP TESTER!
                 """);
 
         switch (readInt()) {
@@ -107,10 +120,9 @@ public class  UI {
             case 4 -> showTop5Ryg();
         }
     }
-
     private void showTop5Crawl() {
         ArrayList<Competitor> competitors = controller.getTop5Competitors(Disciplin.CRAWL);
-        for(Competitor competitor : competitors) {
+        for (Competitor competitor : competitors) {
             System.out.println("Member ID: " + competitor.getMemberID() + " " +
                     "Navn: " + competitor.getName() + " " +
                     "Efternavn: " + competitor.getLastName() + " " +
@@ -159,18 +171,25 @@ public class  UI {
 
         // MEDLEM STAMDATA
         System.out.print("\n" + "Indtast medlems-ID: ");
-        int memberID = sc.nextInt();
+        int memberID = readInt();
         sc.nextLine();
 
         Member foundMember = null;
+
         for (int i = 0; i < controller.getMemberDatabase().size(); i++) {
             if (controller.getMemberDatabase().get(i).getMemberID() == memberID) {
                 foundMember = controller.getMemberDatabase().get(i);
             }
         }
+
+        if (foundMember == null) {
+            System.out.println("Ikke fundet!");
+            return;
+        }
+
         // DISCIPLIN
 
-        Disciplin disciplins[] = Disciplin.values();
+        Disciplin[] disciplins = Disciplin.values();
         System.out.println("Discipliner:");
         for (Disciplin d : disciplins) {
             System.out.println(d);
@@ -471,5 +490,6 @@ public class  UI {
 
     public void loadDB() {
         controller.loadDB();
+        System.out.println(controller.getMemberDatabase().size() + " medlemmer blev loadet");
     }
 }

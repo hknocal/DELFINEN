@@ -1,4 +1,5 @@
 import java.time.LocalDate;
+import java.time.Period;
 import java.time.format.DateTimeFormatter;
 
 public class Member {
@@ -16,9 +17,10 @@ public class Member {
         this.phoneNumber = phoneNumber;
         this.eMail = eMail;
         this.activityStatus = activityStatus;
+        hasPaid = false;
     }
 
-    public Member(String name, String lastName, LocalDate birthDate, int phoneNumber, String eMail, boolean activityStatus, int memberID) {
+    public Member(String name, String lastName, LocalDate birthDate, int phoneNumber, String eMail, boolean activityStatus, int memberID, boolean hasPaid) {
         this.name = name;
         this.lastName = lastName;
         this.birthDate = birthDate;
@@ -26,6 +28,7 @@ public class Member {
         this.eMail = eMail;
         this.activityStatus = activityStatus;
         this.memberID = memberID;
+        this.hasPaid = hasPaid;
     }
 
     //Get metode
@@ -33,12 +36,17 @@ public class Member {
     public int getMemberID() {
         return memberID;
     }
+
     public String getName() {
         return name;
     }
 
     public LocalDate getBirthDate() {
         return birthDate;
+    }
+
+    public int getAge(LocalDate birthDate, LocalDate currentDate) {
+        return Period.between(birthDate, currentDate).getYears();
     }
 
     public int getPhoneNumber() {
@@ -52,8 +60,13 @@ public class Member {
     public boolean isActivityStatus() {
         return activityStatus;
     }
-    public String getLastName(){
+
+    public String getLastName() {
         return lastName;
+    }
+
+    public boolean getHasPaid() {
+        return hasPaid;
     }
 
     //Set metode
@@ -61,10 +74,12 @@ public class Member {
     public void setMemberID(int memberID) {
         this.memberID = memberID;
     }
+
     public void setName(String name) {
         this.name = name;
     }
-    public void setLastName (String lastName){
+
+    public void setLastName(String lastName) {
         this.lastName = lastName;
     }
 
@@ -87,7 +102,7 @@ public class Member {
     @Override
     public String toString() {
         DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        return  "Medlemsnr: " + memberID
+        return "Medlemsnr: " + memberID
                 + " Navn: " + name
                 + " Efternavn: " + lastName
                 + " Fødselsdato: " + birthDate.format(dateFormat)

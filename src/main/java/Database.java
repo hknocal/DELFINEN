@@ -92,13 +92,27 @@ public class Database {
         ArrayList <Competitor> juniorMembers = new ArrayList<>();
 
         for (Competitor competitor : allCompetitors) {
-            if(calculateAge(competitor.getBirthDate(), LocalDate.now()) <= 18) {
+            if(competitor.getAge(competitor.getBirthDate(), LocalDate.now()) < 18) {
                 juniorMembers.add(competitor);
             }
         }
         return juniorMembers;
     }
 
+    //Metode for at finde ud af om du er senior eller junior
+    public ArrayList <Competitor> teamSenior() {
+        ArrayList <Competitor> allCompetitors = findCompetitiveMembers();
+        ArrayList <Competitor> seniorMembers = new ArrayList<>();
+
+        for (Competitor competitor : allCompetitors) {
+            if(competitor.getAge(competitor.getBirthDate(), LocalDate.now()) >= 18) {
+                seniorMembers.add(competitor);
+            }
+        }
+        return seniorMembers;
+    }
+
+    //Metode for at finde top 5
     public ArrayList<Competitor> getTop5Competitors(Disciplin disciplin) {
         ArrayList<Competitor> allCompetitors = findCompetitiveMembers();
         ArrayList<Competitor> filteredCompetitors = new ArrayList<>();

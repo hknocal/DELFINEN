@@ -47,4 +47,20 @@ public class Controller {
     public ArrayList<Competitor> teamJunior() {
         return database.teamJunior();
     }
+
+    public ArrayList <Competitor> teamSenior () {
+        return database.teamSenior();
+    }
+
+    public int calculateTotalSubscription(){
+        return database.calculateTotalSubscription();
+    }
+    public ArrayList <Member> missingPaymentList(){
+        return database.missingPaymentList();
+    }
+
+    public void registerPayment(Member memberID) {
+        database.registerPayment(memberID);
+    }
+
 }
