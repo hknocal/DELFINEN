@@ -84,9 +84,7 @@ public class Database {
         return competitorMembers;
     }
 
-    public int calculateAge(LocalDate birthDate, LocalDate currentDate) {
-        return Period.between(birthDate, currentDate).getYears();
-    }
+    //Metode for at finde ud af om du er junior eller senior
     public ArrayList <Competitor> teamJunior() {
         ArrayList <Competitor> allCompetitors = findCompetitiveMembers();
         ArrayList <Competitor> juniorMembers = new ArrayList<>();
@@ -125,6 +123,26 @@ public class Database {
         Collections.sort(filteredCompetitors, new CompetitorComparator());
 
         return filteredCompetitors;
+    }
+    public int calculateTotalSubscription(){
+        int total = 0;
+        for (Member member : memberDatabase){
+            total += member.calculateSubscription();
+        }
+        return total;
+    }
+    public ArrayList <Member> missingPaymentList(){
+        ArrayList<Member> missingPaymentList = new ArrayList<>();
+        for (Member member : memberDatabase){
+            if (!member.getHasPaid()){
+                missingPaymentList.add(member);
+            }
+        }
+        return missingPaymentList;
+    }
+
+    public void registerPayment(Member memberID) {
+        memberID.setHasPaid();
     }
 }
 

@@ -11,8 +11,8 @@ public class Competitor extends Member {
         super(name, lastName, birthDate, phoneNumber, eMail, activityStatus);
     }
 
-    public Competitor(String name, String lastName, LocalDate birthDate, int phoneNumber, String eMail, boolean activityStatus, int memberID, boolean isCompetitive) {
-        super(name, lastName, birthDate, phoneNumber, eMail, activityStatus, memberID);
+    public Competitor(String name, String lastName, LocalDate birthDate, int phoneNumber, String eMail, boolean activityStatus, int memberID, boolean isCompetitive, boolean hasPaid) {
+        super(name, lastName, birthDate, phoneNumber, eMail, activityStatus, memberID, hasPaid);
         this.isCompetitive = isCompetitive;
     }
 

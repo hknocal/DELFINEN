@@ -10,6 +10,7 @@ public class Member {
     private String eMail;
     private boolean activityStatus;
     private int memberID;
+    private boolean hasPaid;
     public Member(String name, String lastName, LocalDate birthDate, int phoneNumber, String eMail, boolean activityStatus) {
         this.name = name;
         this.lastName = lastName;
@@ -97,6 +98,25 @@ public class Member {
 
     public void setActivityStatus(Boolean activityStatus) {
         this.activityStatus = activityStatus;
+    }
+
+    public void setHasPaid () {
+        hasPaid = true;
+    }
+
+    public int calculateSubscription() {
+        int price = 0;
+
+        if (getAge(birthDate, LocalDate.now()) >= 18) { // Over 18
+            price = 1600;
+        } else if (getAge(birthDate, LocalDate.now()) < 18) { // Under 60 år
+            price = 1000;
+        } else if (getAge(birthDate, LocalDate.now()) >= 60) { //Over 60 år
+            price = 1200;
+        } else if (activityStatus == false) { //For passive medlemmer
+            price = 500;
+        }
+        return price;
     }
 
     @Override

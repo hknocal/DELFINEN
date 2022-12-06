@@ -90,10 +90,10 @@ public class UI {
                 """);
         switch (readInt()) {
             case 1:
-                //Something here
+                addPayment();
                 break;
             case 2:
-                //Something here
+                totalIncome();
                 break;
             case 3:
                 missingPayments();
@@ -102,6 +102,42 @@ public class UI {
                 System.out.println("Forkert valg. Prøv igen");
                 break;
         }
+    }
+
+    //Metode til at tilføje betalinger
+    public void addPayment() {
+        System.out.println("KONTINGENTREGISTRERING" + "\n");
+        System.out.print("Indtast medlems-ID for at registrere kontingent: ");
+        int memberID = sc.nextInt();
+        Member foundMember = null;
+        for (int i = 0; i < controller.getMemberDatabase().size(); i++) {
+            if (controller.getMemberDatabase().get(i).getMemberID() == memberID) {
+                foundMember = controller.getMemberDatabase().get(i);
+                break;
+            }
+        }
+
+        if (foundMember == null) {
+            System.out.println("Ikke fundet!");
+            return;
+        }
+
+        controller.registerPayment(foundMember);
+
+        System.out.println("Kontingent registreret!");
+    }
+
+    //Metode til at få et overblik over manglende betaling
+    public void missingPayments() {
+        System.out.println("Oversigt over manglende betaling");
+        for (Member member : controller.missingPaymentList()) {
+            System.out.println("Medlems-ID: " + member.getMemberID() + " Navn: " + member.getName());
+        }
+    }
+
+    public void totalIncome() {
+        System.out.print("Forventet total indkomst: ");
+        System.out.print(controller.calculateTotalSubscription());
     }
 
     public void topPerformers() {
