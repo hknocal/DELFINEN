@@ -1,4 +1,4 @@
-Mikkel,Hansen,2007-09-10,34239412,mikkel@mail.dk,true,1,true,false
+Mikkel,Hansen,2007-09-10,34239412,mikkel@mail.dk,true,1,true,true
 Pernille,Olsen,2008-10-01,93484341,pernille@mail.dk,true,2,true,false
 Abdullah,Jensen,2009-10-05,29293434,abdi@mail.dk,true,3,true,false
 Nicolai,Sørensen,2010-10-06,30309021,nico@mail.dk,true,4,true,false
@@ -12,4 +12,4 @@ Maria,Hansen,2008-06-20,23344567,hans@mail.dk,true,11,false
 Christian,Hansen,2008-06-20,23344567,hans@mail.dk,true,12,false
 Carlo,Hansen,2008-06-20,23344567,hans@mail.dk,true,13,false
 Alex,Hansen,2008-06-20,23344567,hans@mail.dk,false,14,false
-Marco,Hansen,2008-06-20,23344567,hans@mail.dk,false,15,false
+Marco,Hansen,2008-06-20,23344567,hans@mail.dk,false,15,true

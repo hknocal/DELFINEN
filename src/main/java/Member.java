@@ -11,6 +11,7 @@ public class Member {
     private boolean activityStatus;
     private int memberID;
     private boolean hasPaid;
+
     public Member(String name, String lastName, LocalDate birthDate, int phoneNumber, String eMail, boolean activityStatus) {
         this.name = name;
         this.lastName = lastName;
