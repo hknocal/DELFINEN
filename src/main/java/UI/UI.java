@@ -91,7 +91,7 @@ public class UI {
     public void addPayment() {
         try {
             System.out.println(Color.BLACK_BOLD + "KONTINGENTREGISTRERING" + "\n");
-            System.out.print(Color.BLACK_BOLD + "Indtast medlems-ID for at registrere kontingent: ");
+            System.out.print(Color.BLACK_BOLD + "🟡 Indtast medlems-ID for at registrere kontingent: ");
             int memberID = readInt();
             Member foundMember = null;
             for (int i = 0; i < controller.getMemberDatabase().size(); i++) {
@@ -106,14 +106,13 @@ public class UI {
                 return;
             }
 
-            System.out.println(Color.BLACK_BOLD + "Du er ved at registrere en betaling");
-            System.out.println(Color.BLACK_BOLD + "Forventet betaling for medlem: " + foundMember.calculateSubscription());
+            System.out.println(Color.BLACK_BOLD + "🏦 Du er ved at registrere en betaling");
+            System.out.println(Color.BLACK_BOLD + "🏦 Forventet betaling for medlem: " + foundMember.calculateSubscription());
 
-            System.out.println(Color.BLACK_BOLD + "Svar ja for at registrere betaling, ellers svar nej!");
+            System.out.println(Color.BLACK_BOLD + "❗ Svar" + Color.GREEN_BOLD + " ja" + Color.BLACK_BOLD + " for at registrere betaling, ellers svar" + Color.RED_BOLD + " nej!");
             String userInput = sc.nextLine();
 
             while (!(userInput.equals("ja") || userInput.equals("nej"))) {
-                System.out.println(Color.BLACK_BOLD + "Svar ja eller nej!");
                 userInput = sc.nextLine();
             }
 
@@ -142,7 +141,7 @@ public class UI {
     }
 
     public void totalIncome() {
-        System.out.print(Color.BLACK_BOLD + "Forventet total indkomst: " + controller.calculateTotalSubscription());
+        System.out.print(Color.GREEN_BOLD + "🏦 Forventet total indkomst: " + controller.calculateTotalSubscription());
     }
     public void topPerformers() {
         ArrayList<Competitor> top5Competitor = new ArrayList<>();
@@ -196,7 +195,7 @@ public class UI {
             }
 
             // MEDLEM STAMDATA
-            System.out.print(Color.BLACK_BOLD + "\n" + "Indtast medlems-ID: ");
+            System.out.print(Color.BLACK_BOLD + "\n" + "🟡 Indtast medlems-ID: ");
             int memberID = readInt();
             sc.nextLine();
 
@@ -221,22 +220,22 @@ public class UI {
                 System.out.println(d);
             }
             System.out.println();
-            System.out.println(Color.BLACK_BOLD + "Indtast valgt disciplin: ");
+            System.out.println(Color.BLACK_BOLD + "🟡 Indtast valgt disciplin: ");
             Disciplin disciplin = Disciplin.valueOf(sc.next().toUpperCase());
 
             // PERFORMANCE TID
-            System.out.println(Color.BLACK_BOLD + "Indtast tid i formatet MM,SS (fx 03,10)");
+            System.out.println(Color.BLACK_BOLD + "🟡 Indtast tid i formatet MM,SS (fx 03,10)");
             double performanceTime = readDouble();
 
             // DATO
             LocalDate date;
             DateTimeFormatter dateTimeFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-            System.out.println(Color.BLACK_BOLD + "Indtast dato (DD/MM/YYYY)");
+            System.out.println(Color.BLACK_BOLD + "🟡 Indtast dato (DD/MM/YYYY)");
             String enteredDate = sc.next();
             date = LocalDate.parse(enteredDate, dateTimeFormat);
 
             // LOKATION
-            System.out.println(Color.BLACK_BOLD + "Indtast lokation");
+            System.out.println(Color.BLACK_BOLD + "🟡 Indtast lokation");
             String lokation = sc.next();
 
             controller.addPerformanceTime(memberID, disciplin, performanceTime, date, lokation);
@@ -249,7 +248,7 @@ public class UI {
     }
 
     public void showPerformance() {
-        System.out.print(Color.BLACK_BOLD + "Indtast medlemsnr: ");
+        System.out.print(Color.BLACK_BOLD + "🟡 Indtast medlemsnr: ");
         int read = readInt();
         Competitor member = (Competitor) controller.findMember(read);
         for (Performance p : member.getPerformances()) {
@@ -354,16 +353,16 @@ public class UI {
 
     public void addMember() {
         try {
-            System.out.println(Color.BLACK_BOLD + "Indtast navn");
+            System.out.println(Color.BLACK_BOLD + "🟡 Indtast navn");
             String name = sc.next();
-            System.out.println(Color.BLACK_BOLD + "Indtast efternavn");
+            System.out.println(Color.BLACK_BOLD + "🟡 Indtast efternavn");
             String lastName = sc.next();
             LocalDate birthDate = addBirthday();
-            System.out.println(Color.BLACK_BOLD + "Indtast telefonnummer");
+            System.out.println(Color.BLACK_BOLD + "🟡 Indtast telefonnummer");
             int phoneNumber = readInt();
-            System.out.println(Color.BLACK_BOLD + "Indtast e-mail");
+            System.out.println(Color.BLACK_BOLD + "🟡 Indtast e-mail");
             String eMail = sc.next();
-            System.out.println(Color.BLACK_BOLD + "Er medlemmet aktivt? (Svar JA, ellers er medlemmet inaktivt)");
+            System.out.println(Color.BLACK_BOLD + "🟡 Er medlemmet aktivt? (Svar JA, ellers er medlemmet inaktivt)");
             boolean activityStatus = false;
             String isActivityStatus = sc.next().toLowerCase();
             if (isActivityStatus.contentEquals("ja")) {
@@ -378,16 +377,16 @@ public class UI {
 
     public void addCompetitiveMember() {
         try {
-            System.out.println(Color.BLACK_BOLD + "Indtast navn");
+            System.out.println(Color.BLACK_BOLD + "🟡 Indtast navn");
             String name = sc.next();
-            System.out.println(Color.BLACK_BOLD + "Indtast efternavn");
+            System.out.println(Color.BLACK_BOLD + "🟡 Indtast efternavn");
             String lastName = sc.next();
             LocalDate birthDate = addBirthday();
-            System.out.println(Color.BLACK_BOLD + "Indtast telefonnummer");
+            System.out.println(Color.BLACK_BOLD + "🟡 Indtast telefonnummer");
             int phoneNumber = readInt();
-            System.out.println(Color.BLACK_BOLD + "Indtast e-mail");
+            System.out.println(Color.BLACK_BOLD + "🟡 Indtast e-mail");
             String eMail = sc.next();
-            System.out.println(Color.BLACK_BOLD + "Er medlemmet aktivt? (Svar JA, ellers er medlemmet inaktivt)");
+            System.out.println(Color.BLACK_BOLD + "🟡 Er medlemmet aktivt? (Svar JA, ellers er medlemmet inaktivt)");
             boolean activityStatus = false;
             String isActivityStatus = sc.next().toLowerCase();
             if (isActivityStatus.contentEquals("ja")) {
@@ -407,7 +406,7 @@ public class UI {
         LocalDate birthDate = null;
         DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         do {
-            System.out.println(Color.BLACK_BOLD + "Indtast fødselsdato (DD/MM/YYYY)");
+            System.out.println(Color.BLACK_BOLD + "🟡 Indtast fødselsdato (DD/MM/YYYY)");
             try {
                 String date = sc.next();
                 birthDate = LocalDate.parse(date, dateFormat);
@@ -455,7 +454,7 @@ public class UI {
     public void editMember() {
         DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         try {
-            System.out.print(Color.BLACK_BOLD + "Indtast medlems-ID på medlem du vil redigere: ");
+            System.out.print(Color.BLACK_BOLD + "🟡 Indtast medlems-ID på medlem du vil redigere: ");
             int memberID = sc.nextInt();
             sc.nextLine();
 
@@ -472,44 +471,44 @@ public class UI {
                 return;
             }
 
-            System.out.println(Color.BLACK_BOLD + "Redigerer medlemsnr: " + foundMember.getMemberID());
-            System.out.println(Color.BLACK_BOLD + "Medlemsinfo: " + foundMember.getName() + " " + foundMember.getLastName());
+            System.out.println(Color.BLACK_BOLD + "🟡 Redigerer medlemsnr: " + foundMember.getMemberID());
+            System.out.println(Color.BLACK_BOLD + "🔎 Medlemsinfo: " + foundMember.getName() + " " + foundMember.getLastName());
             System.out.println();
-            System.out.println(Color.BLACK_BOLD + "Indtast dine ændringer og tryk ENTER. Hvis du ikke ønsker at redigere, så tryk ENTER");
+            System.out.println(Color.BLACK_BOLD + "🟡 Indtast dine ændringer og tryk ENTER. Hvis du ikke ønsker at redigere, så tryk ENTER");
 
             //Redigering for navn
-            System.out.println(Color.BLACK_BOLD + "Name: " + foundMember.getName());
-            System.out.println(Color.BLACK_BOLD + "Skriv nyt navn: ");
+            System.out.println(Color.BLACK_BOLD + "🟡 Name: " + foundMember.getName());
+            System.out.println(Color.BLACK_BOLD + "🟡 Skriv nyt navn: ");
             String newName = sc.nextLine();
             if (!newName.isEmpty()) foundMember.setName(newName);
 
             //Redigering for efternavn
-            System.out.println(Color.BLACK_BOLD + "Efternavn: " + foundMember.getLastName());
-            System.out.println(Color.BLACK_BOLD + "Skriv et nyt efternavn");
+            System.out.println(Color.BLACK_BOLD + "🟡 Efternavn: " + foundMember.getLastName());
+            System.out.println(Color.BLACK_BOLD + "🟡 Skriv et nyt efternavn");
             String newLastName = sc.nextLine();
             if (!newLastName.isEmpty()) foundMember.setLastName(newLastName);
 
             //Redigering for føds
-            System.out.println(Color.BLACK_BOLD + "Fødselsdato: " + foundMember.getBirthDate().format(dateFormat));
-            System.out.println(Color.BLACK_BOLD + "Indtast en ny fødselsdato DD/MM/YYYY");
+            System.out.println(Color.BLACK_BOLD + "🟡 Fødselsdato: " + foundMember.getBirthDate().format(dateFormat));
+            System.out.println(Color.BLACK_BOLD + "🟡 Indtast en ny fødselsdato DD/MM/YYYY");
             String newBirthDate = sc.nextLine();
             if (!newBirthDate.isEmpty()) foundMember.setBirthDate(LocalDate.parse(newBirthDate, dateFormat));
 
             //Redigering for tlf nr
-            System.out.println(Color.BLACK_BOLD + "Telefonnummer: " + foundMember.getPhoneNumber());
-            System.out.println(Color.BLACK_BOLD + "Indtast et nyt telefonnummer");
+            System.out.println(Color.BLACK_BOLD + "🟡 Telefonnummer: " + foundMember.getPhoneNumber());
+            System.out.println(Color.BLACK_BOLD + "🟡 Indtast et nyt telefonnummer");
             String newPhoneNumber = sc.nextLine();
             if (!newPhoneNumber.isEmpty()) foundMember.setPhoneNumber(Integer.parseInt(newPhoneNumber));
 
             //Redigering for email
             System.out.println("Email: " + foundMember.geteMail());
-            System.out.println(Color.BLACK_BOLD + "Indtast en ny mailadresse");
+            System.out.println(Color.BLACK_BOLD + "🟡 Indtast en ny mailadresse");
             String newEmail = sc.nextLine();
             if (!newEmail.isEmpty()) foundMember.seteMail(newEmail);
 
             //Redigering for aktiv eller passiv
-            System.out.println(Color.BLACK_BOLD + "Aktiv eller passiv: " + foundMember.isActivityStatus());
-            System.out.println(Color.BLACK_BOLD + "Indtast et nyt medlemskabstype");
+            System.out.println(Color.BLACK_BOLD + "🟡 Aktiv eller passiv: " + foundMember.isActivityStatus());
+            System.out.println(Color.BLACK_BOLD + "🟡 Indtast et nyt medlemskabstype");
             String newType = sc.nextLine();
             if (!newEmail.isEmpty()) foundMember.setActivityStatus(Boolean.parseBoolean(newType));
 

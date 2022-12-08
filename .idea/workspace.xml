@@ -4,24 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" name="Changes" comment="ui changes">
+    <list default="true" id="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" name="Changes" comment="distributed classes into packages">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BrystsvoemningComparator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Comparators/BrystsvoemningComparator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ButterflyComparator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Comparators/ButterflyComparator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Color.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/UI/Color.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Competitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Member/Competitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CrawlComparator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Comparators/CrawlComparator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataHandling/Database.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Disciplin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Performance/Disciplin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/FileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataHandling/FileHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Member/Member.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Performance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Performance/Performance.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/PerformanceTimeComparator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Comparators/PerformanceTimeComparator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/RygcrawlComparator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Comparators/RygcrawlComparator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/UI/UI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/MemberTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/MemberTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/UI/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/UI/UI.java" afterDir="false" />
     </list>
     <list id="50b28de6-4779-4ba7-91da-fa96d4eec855" name="Changes by Zana" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -147,7 +132,7 @@
       <workItem from="1670326646566" duration="26186000" />
       <workItem from="1670359282003" duration="2196000" />
       <workItem from="1670490575067" duration="7876000" />
-      <workItem from="1670525704667" duration="1435000" />
+      <workItem from="1670525704667" duration="2281000" />
     </task>
     <task id="LOCAL-00001" summary="setup gitignore file">
       <created>1669120697504</created>
@@ -317,7 +302,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670524406597</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="distributed classes into packages">
+      <created>1670527396635</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1670527396636</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -368,7 +360,8 @@
     <MESSAGE value="junit tests of possible instances of calculatesubscription" />
     <MESSAGE value="minor enhancements, fixed search db" />
     <MESSAGE value="ui changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="ui changes" />
+    <MESSAGE value="distributed classes into packages" />
+    <option name="LAST_COMMIT_MESSAGE" value="distributed classes into packages" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
