@@ -101,21 +101,21 @@ public class Member {
         this.activityStatus = activityStatus;
     }
 
-    public void setHasPaid () {
+    public void setHasPaid() {
         hasPaid = true;
     }
 
     public int calculateSubscription() {
         int price = 0;
 
-        if (getAge(birthDate, LocalDate.now()) >= 18) { // Over 18
-            price = 1600;
-        } else if (getAge(birthDate, LocalDate.now()) < 18) { // Under 60 år
-            price = 1000;
-        } else if (getAge(birthDate, LocalDate.now()) >= 60) { //Over 60 år
-            price = 1200;
-        } else if (activityStatus == false) { //For passive medlemmer
+        if (!activityStatus) {
             price = 500;
+        } else if (getAge(birthDate, LocalDate.now()) < 18) {
+            price = 1000;
+        } else if (getAge(birthDate, LocalDate.now()) >= 18 && getAge(birthDate, LocalDate.now()) < 60) {
+            price = 1600;
+        } else if (getAge(birthDate, LocalDate.now()) >= 60) {
+            price = 1200;
         }
         return price;
     }
