@@ -4,11 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" name="Changes" comment="minor enhancements, fixed search db">
+    <list default="true" id="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" name="Changes" comment="ui changes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/UI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/memberList.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/memberList.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/performanceList.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/performanceList.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BrystsvoemningComparator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Comparators/BrystsvoemningComparator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ButterflyComparator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Comparators/ButterflyComparator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Color.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/UI/Color.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Competitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Member/Competitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CrawlComparator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Comparators/CrawlComparator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataHandling/Database.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Disciplin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Performance/Disciplin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/FileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataHandling/FileHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Member/Member.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Performance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Performance/Performance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/PerformanceTimeComparator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Comparators/PerformanceTimeComparator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/RygcrawlComparator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Comparators/RygcrawlComparator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/UI/UI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/MemberTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/MemberTest.java" afterDir="false" />
     </list>
     <list id="50b28de6-4779-4ba7-91da-fa96d4eec855" name="Changes by Zana" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -90,7 +103,7 @@
   </component>
   <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
+      <option name="MAIN_CLASS_NAME" value="Main.Main" />
       <module name="DELFINEN" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -134,6 +147,7 @@
       <workItem from="1670326646566" duration="26186000" />
       <workItem from="1670359282003" duration="2196000" />
       <workItem from="1670490575067" duration="7876000" />
+      <workItem from="1670525704667" duration="1435000" />
     </task>
     <task id="LOCAL-00001" summary="setup gitignore file">
       <created>1669120697504</created>
@@ -296,7 +310,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670510487638</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="ui changes">
+      <created>1670524406597</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1670524406597</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -346,7 +367,8 @@
     <MESSAGE value="moved test to test directory" />
     <MESSAGE value="junit tests of possible instances of calculatesubscription" />
     <MESSAGE value="minor enhancements, fixed search db" />
-    <option name="LAST_COMMIT_MESSAGE" value="minor enhancements, fixed search db" />
+    <MESSAGE value="ui changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="ui changes" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

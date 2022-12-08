@@ -1,8 +1,14 @@
+package DataHandling;
+
 import java.io.File;
 import java.io.FileWriter;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Scanner;
+import Member.Member;
+import Member.Competitor;
+import Performance.Performance;
+import Performance.Disciplin;
 
 import static java.lang.String.valueOf;
 

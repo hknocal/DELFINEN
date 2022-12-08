@@ -1,4 +1,9 @@
+package Comparators;
+import Member.Competitor;
+import Performance.Disciplin;
+
 import java.util.Comparator;
+
 public class RygcrawlComparator implements Comparator<Competitor> {
 
     @Override

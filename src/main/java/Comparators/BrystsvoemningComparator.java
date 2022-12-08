@@ -1,3 +1,8 @@
+package Comparators;
+
+import Member.Competitor;
+import Performance.Disciplin;
+
 import java.util.Comparator;
 public class BrystsvoemningComparator implements Comparator<Competitor> {
 

@@ -1,3 +1,11 @@
+package Member;
+
+import Comparators.PerformanceTimeComparator;
+import Performance.Disciplin;
+import Performance.Performance;
+import Member.Member;
+import Member.Competitor;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collections;

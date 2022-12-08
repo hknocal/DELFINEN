@@ -1,3 +1,12 @@
+package DataHandling;
+
+import Comparators.BrystsvoemningComparator;
+import Comparators.ButterflyComparator;
+import Comparators.CrawlComparator;
+import Comparators.RygcrawlComparator;
+import Member.Member;
+import Member.Competitor;
+import Performance.Disciplin;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collections;

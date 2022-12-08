@@ -1,3 +1,5 @@
+package Performance;
+
 import java.time.LocalDate;
 
 public class Performance {
@@ -16,7 +18,7 @@ public class Performance {
 
     @Override
     public String toString() {
-        return "Date: " + date + " Location: " + location  + " Disciplin: " + disciplin + " Performance Time: " + performanceTime;
+        return "Date: " + date + " Location: " + location  + " Performance.Performance.Disciplin: " + disciplin + " Performance.Performance Time: " + performanceTime;
     }
 
     public LocalDate getDate() {
