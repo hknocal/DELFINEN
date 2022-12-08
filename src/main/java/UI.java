@@ -1,3 +1,4 @@
+import java.awt.*;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
@@ -309,11 +310,16 @@ public class UI {
     }
 
     private void introMessage() {
-        System.out.print("""
-                ----------------------------------
-                SVØMMEKLUBBEN DELFINEN
-                ----------------------------------
+        System.out.println(Color.CYAN_BOLD_BRIGHT);
+        System.out.print("""  
+                ██████╗░███████╗██╗░░░░░███████╗██╗███╗░░██╗███████╗███╗░░██╗
+                ██╔══██╗██╔════╝██║░░░░░██╔════╝██║████╗░██║██╔════╝████╗░██║
+                ██║░░██║█████╗░░██║░░░░░█████╗░░██║██╔██╗██║█████╗░░██╔██╗██║
+                ██║░░██║██╔══╝░░██║░░░░░██╔══╝░░██║██║╚████║██╔══╝░░██║╚████║
+                ██████╔╝███████╗███████╗██║░░░░░██║██║░╚███║███████╗██║░╚███║
+                ╚═════╝░╚══════╝╚══════╝╚═╝░░░░░╚═╝╚═╝░░╚══╝╚══════╝╚═╝░░╚══╝
                 """);
+        System.out.println(Color.RESET);
     }
 
     public void showMenu() {
