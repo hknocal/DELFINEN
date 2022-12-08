@@ -141,60 +141,43 @@ public class UI {
     }
 
     public void topPerformers() {
+        ArrayList <Competitor> top5Competitor = new ArrayList<>();
+        Disciplin d = null;
         System.out.println("""
-                1. TOP 5 CRAWL
-                2. TOP 5 BUTTERFLY
-                3. TOP 5 BRYST
-                4. TOP 5 RYG
-                5. TOP TESTER!
+                1. TOP 5 BUTTERFLY
+                2. TOP 5 CRAWL
+                3. TOP 5 RYGCRAWL
+                4. TOP 5 BRYSTSVØMNING
                 """);
 
         switch (readInt()) {
-            case 1 -> showTop5Crawl();
-            case 2 -> showTop5Butterfly();
-            case 3 -> showTop5Bryst();
-            case 4 -> showTop5Ryg();
+            case 1 -> {
+                d = Disciplin.BUTTERFLY;
+                top5Competitor = controller.getTop5Competitors(d);
+            }
+            case 2 -> {
+                d = Disciplin.CRAWL;
+                top5Competitor = controller.getTop5Competitors(d);
+            }
+            case 3 -> {
+                d = Disciplin.RYGCRAWL;
+                top5Competitor = controller.getTop5Competitors(d);
+            }
+            case 4 -> {
+                d = Disciplin.BRYSTSVOEMNING;
+                top5Competitor = controller.getTop5Competitors(d);
+            }
         }
-    }
-    private void showTop5Crawl() {
-        ArrayList<Competitor> competitors = controller.getTop5Competitors(Disciplin.CRAWL);
-        for (Competitor competitor : competitors) {
-            System.out.println("Member ID: " + competitor.getMemberID() + " " +
-                    "Navn: " + competitor.getName() + " " +
-                    "Efternavn: " + competitor.getLastName() + " " +
-                    "Tid: " + competitor.findBestPerformance().getPerformanceTime());
+
+        for (Competitor competitor : top5Competitor) {
+            ArrayList<Performance> performanceData = competitor.getPerformances();
+            System.out.println(
+                    "Tid: " + competitor.findBestPerformance(d).getPerformanceTime() +
+                    " Navn: " + competitor.getName() +
+                    " Lokation: " + competitor.findBestPerformance(d).getLocation());
         }
     }
 
-    private void showTop5Butterfly() {
-        ArrayList<Competitor> competitors = controller.getTop5Competitors(Disciplin.BUTTERFLY);
-        for (Competitor competitor : competitors) {
-            System.out.println("Member ID: " + competitor.getMemberID() + " " +
-                    "Navn: " + competitor.getName() + " " +
-                    "Efternavn: " + competitor.getLastName() + " " +
-                    "Tid: " + competitor.findBestPerformance().getPerformanceTime());
-        }
-    }
-
-    private void showTop5Bryst() {
-        ArrayList<Competitor> competitors = controller.getTop5Competitors(Disciplin.BRYSTSVØMNING);
-        for (Competitor competitor : competitors) {
-            System.out.println("Member ID: " + competitor.getMemberID() + " " +
-                    "Navn: " + competitor.getName() + " " +
-                    "Efternavn: " + competitor.getLastName() + " " +
-                    "Tid: " + competitor.findBestPerformance().getPerformanceTime());
-        }
-    }
-
-    private void showTop5Ryg() {
-        ArrayList<Competitor> competitors = controller.getTop5Competitors(Disciplin.RYGCRAWL);
-        for (Competitor competitor : competitors) {
-            System.out.println("Member ID: " + competitor.getMemberID() + " " +
-                    "Navn: " + competitor.getName() + " " +
-                    "Efternavn: " + competitor.getLastName() + " " +
-                    "Tid: " + competitor.findBestPerformance().getPerformanceTime());
-        }
-    }
 
     public void registerPerformance() {
         // PRINT

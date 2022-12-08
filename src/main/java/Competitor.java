@@ -29,8 +29,14 @@ public class Competitor extends Member {
         return performances;
     }
 
-    public Performance findBestPerformance() {
-        Performance min = Collections.min(performances, new PerformanceTimeComparator());
+    public Performance findBestPerformance(Disciplin disciplin) {
+        ArrayList <Performance> sortedPerformancesForDisciplines = new ArrayList<>();
+        for (Performance p : performances) {
+            if(p.getDisciplin() == disciplin) {
+                sortedPerformancesForDisciplines.add(p);
+            }
+        }
+        Performance min = Collections.min(sortedPerformancesForDisciplines, new PerformanceTimeComparator());
         return min;
     }
 

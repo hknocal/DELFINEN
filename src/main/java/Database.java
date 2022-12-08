@@ -1,6 +1,4 @@
-import java.lang.reflect.Array;
 import java.time.LocalDate;
-import java.time.Period;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -120,10 +118,17 @@ public class Database {
                 filteredCompetitors.add(competitor);
             }
         }
-        Collections.sort(filteredCompetitors, new CompetitorComparator());
+
+        switch (disciplin) {
+            case BUTTERFLY -> Collections.sort(filteredCompetitors, new ButterflyComparator());
+            case CRAWL -> Collections.sort(filteredCompetitors, new CrawlComparator());
+            case RYGCRAWL -> Collections.sort(filteredCompetitors, new RygcrawlComparator());
+            case BRYSTSVOEMNING -> Collections.sort(filteredCompetitors, new BrystsvoemningComparator());
+        }
 
         return filteredCompetitors;
     }
+
     public int calculateTotalSubscription(){
         int total = 0;
         for (Member member : memberDatabase){
