@@ -4,8 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" name="Changes" comment="junit tests of possible instances of calculatesubscription" />
-    <list id="50b28de6-4779-4ba7-91da-fa96d4eec855" name="Changes by Zana" comment="" />
+    <list default="true" id="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" name="Changes" comment="junit tests of possible instances of calculatesubscription">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/UI.java" afterDir="false" />
+    </list>
+    <list id="d301a818-6b65-41d1-a1af-f130c558ccb1" name="Changes by hakanocal" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/UI.java" afterDir="false" />
+    </list>
+    <list id="7a1aa1ad-bcb8-4f3f-9275-ae2b5fd3df4e" name="Changes by Heval" comment="" />
+    <list id="c7346bf7-3d30-4001-a052-8db72ef35202" name="Changes by Zana" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -40,6 +47,18 @@
         <option name="url" value="https://github.com/hknocal/DELFINEN.git" />
       </UrlAndAccount>
     </option>
+  </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/src/main/java/UI.java">
+      <ranges>
+        <range start1="108" end1="118" start2="108" end2="119" changelist="d301a818-6b65-41d1-a1af-f130c558ccb1" />
+        <range start1="119" end1="123" start2="120" end2="124" changelist="d301a818-6b65-41d1-a1af-f130c558ccb1" />
+        <range start1="124" end1="125" start2="125" end2="127" changelist="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" />
+        <range start1="126" end1="127" start2="128" end2="136" changelist="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" />
+        <range start1="143" end1="144" start2="152" end2="153" changelist="d301a818-6b65-41d1-a1af-f130c558ccb1" />
+        <range start1="175" end1="177" start2="184" end2="186" changelist="d301a818-6b65-41d1-a1af-f130c558ccb1" />
+      </ranges>
+    </file>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -129,6 +148,7 @@
       <workItem from="1670326646566" duration="26186000" />
       <workItem from="1670359282003" duration="2196000" />
       <workItem from="1670490575067" duration="7876000" />
+      <workItem from="1670499676157" duration="1665000" />
     </task>
     <task id="LOCAL-00001" summary="setup gitignore file">
       <created>1669120697504</created>

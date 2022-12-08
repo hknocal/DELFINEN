@@ -122,9 +122,17 @@ public class UI {
             return;
         }
 
-        controller.registerPayment(foundMember);
+            System.out.println("Du er ved at registrere en betaling");
+            System.out.println("Forventet betaling for medlem: " + foundMember.calculateSubscription());
 
-        System.out.println("Kontingent registreret!");
+            System.out.println("Svar ja for at registrere betaling, ellers svar nej!");
+            switch (sc.next()) {
+                case "ja" -> controller.registerPayment(foundMember);
+                case "nej" -> System.out.println("Din betaling blev afvist");
+            }
+        } catch (InputMismatchException e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     //Metode til at få et overblik over manglende betaling
