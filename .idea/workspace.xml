@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" name="Changes" comment="distributed classes into packages">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/UI/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/UI/UI.java" afterDir="false" />
+    <list default="true" id="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" name="Changes" comment="minor ui tweaks final commit">
+      <change afterPath="$PROJECT_DIR$/docs/delfinen activity diagram.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/delfinen addpayment sequence diagram.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/delfinen domain model.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/delfinen uml class diagram.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/memberList.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/memberList.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/performanceList.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/performanceList.csv" afterDir="false" />
     </list>
     <list id="50b28de6-4779-4ba7-91da-fa96d4eec855" name="Changes by Zana" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -79,6 +83,10 @@
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/docs" />
+      <recent name="$PROJECT_DIR$/src/data" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
     </key>
@@ -132,7 +140,7 @@
       <workItem from="1670326646566" duration="26186000" />
       <workItem from="1670359282003" duration="2196000" />
       <workItem from="1670490575067" duration="7876000" />
-      <workItem from="1670525704667" duration="2281000" />
+      <workItem from="1670525704667" duration="3168000" />
     </task>
     <task id="LOCAL-00001" summary="setup gitignore file">
       <created>1669120697504</created>
@@ -309,7 +317,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670527396636</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="minor ui tweaks final commit">
+      <created>1670528070420</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1670528070420</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -361,7 +376,8 @@
     <MESSAGE value="minor enhancements, fixed search db" />
     <MESSAGE value="ui changes" />
     <MESSAGE value="distributed classes into packages" />
-    <option name="LAST_COMMIT_MESSAGE" value="distributed classes into packages" />
+    <MESSAGE value="minor ui tweaks final commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="minor ui tweaks final commit" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
