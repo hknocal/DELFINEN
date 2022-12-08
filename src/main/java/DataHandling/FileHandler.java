@@ -13,8 +13,8 @@ import Performance.Disciplin;
 import static java.lang.String.valueOf;
 
 public class FileHandler {
-    File memberList = new File("src/memberList.csv");
-    File performanceList = new File("src/performanceList.csv");
+    File memberList = new File("src/data/memberList.csv");
+    File performanceList = new File("src/data/performanceList.csv");
 
     public void savePerformanceData(ArrayList<Member> memberDatabase) {
         try {
