@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" name="Changes" comment="junit tests of possible instances of calculatesubscription">
+    <list default="true" id="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" name="Changes" comment="setup double reader">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Database.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/UI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/memberList.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/memberList.csv" afterDir="false" />
     </list>
     <list id="50b28de6-4779-4ba7-91da-fa96d4eec855" name="Changes by Zana" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -345,6 +348,8 @@
         <watch expression="memberCounter" language="JAVA" />
         <watch expression="date" />
         <watch expression="date" />
+        <watch expression="member.getName().toLowerCase().contains(searchCriteria)" language="JAVA" />
+        <watch expression="member.getName()" language="JAVA" />
       </configuration>
     </watches-manager>
   </component>

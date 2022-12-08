@@ -16,22 +16,14 @@ public class UI {
         while (isRunning) {
             showMenu();
             switch (readInt()) {
-                case 1:
-                    memberHandling();
-                    break;
-                case 2:
-                    cashierUI();
-                    break;
-                case 3:
-                    trainerHandling();
-                    break;
-                case 9:
+                case 1 -> memberHandling();
+                case 2 -> cashierUI();
+                case 3 -> trainerHandling();
+                case 9 -> {
                     saveToDB();
                     isRunning = false;
-                    break;
-                default:
-                    System.out.println("Der opstod en fejl. Prøv igen");
-                    break;
+                }
+                default -> System.out.println("Der opstod en fejl. Prøv igen");
             }
         }
     }
@@ -41,32 +33,18 @@ public class UI {
                 1. Registrer træning
                 2. Vis træningsdata
                 3. Vis konkurrencemedlemmer
-                4. Top 5 
+                4. Top 5
                 5. Team Junior
                 6. Team Senior
                 """);
         switch (readInt()) {
-            case 1:
-                registerPerformance();
-                break;
-            case 2:
-                showPerformance();
-                break;
-            case 3:
-                showCompetitiveMembers();
-                break;
-            case 4:
-                topPerformers();
-                break;
-            case 5:
-                teamJunior();
-                break;
-            case 6:
-                teamSenior();
-                break;
-            default:
-                System.out.println("Forkert valg. Prøv igen");
-                break;
+            case 1 -> registerPerformance();
+            case 2 -> showPerformance();
+            case 3 -> showCompetitiveMembers();
+            case 4 -> topPerformers();
+            case 5 -> teamJunior();
+            case 6 -> teamSenior();
+            default -> System.out.println("Forkert valg. Prøv igen");
         }
     }
 
@@ -84,23 +62,15 @@ public class UI {
 
     public void cashierUI() {
         System.out.println("""
-                1. Registrer kontingent 
+                1. Registrer kontingent
                 2. Forventet indtjening
                 3. Oversigt over medlemmer i restance
                 """);
         switch (readInt()) {
-            case 1:
-                addPayment();
-                break;
-            case 2:
-                totalIncome();
-                break;
-            case 3:
-                missingPayments();
-                break;
-            default:
-                System.out.println("Forkert valg. Prøv igen");
-                break;
+            case 1 -> addPayment();
+            case 2 -> totalIncome();
+            case 3 -> missingPayments();
+            default -> System.out.println("Forkert valg. Prøv igen");
         }
     }
 
@@ -109,7 +79,7 @@ public class UI {
         try {
             System.out.println("KONTINGENTREGISTRERING" + "\n");
             System.out.print("Indtast medlems-ID for at registrere kontingent: ");
-            int memberID = sc.nextInt();
+            int memberID = readInt();
             Member foundMember = null;
             for (int i = 0; i < controller.getMemberDatabase().size(); i++) {
                 if (controller.getMemberDatabase().get(i).getMemberID() == memberID) {
@@ -127,8 +97,18 @@ public class UI {
             System.out.println("Forventet betaling for medlem: " + foundMember.calculateSubscription());
 
             System.out.println("Svar ja for at registrere betaling, ellers svar nej!");
-            switch (sc.next()) {
-                case "ja" -> controller.registerPayment(foundMember);
+            String userInput = sc.nextLine();
+
+            while (!(userInput.equals("ja") || userInput.equals("nej"))) {
+                System.out.println("Svar ja eller nej!");
+                userInput = sc.nextLine();
+            }
+
+            switch (userInput) {
+                case "ja" -> {
+                    controller.registerPayment(foundMember);
+                    System.out.println("Din betaling blev registret!");
+                }
                 case "nej" -> System.out.println("Din betaling blev afvist");
             }
         } catch (InputMismatchException e) {
@@ -227,14 +207,14 @@ public class UI {
             }
             System.out.println();
             System.out.println("Indtast valgt disciplin: ");
-            Disciplin disciplin = Disciplin.valueOf(readString().toUpperCase());
+            Disciplin disciplin = Disciplin.valueOf(sc.next().toUpperCase());
 
             // PERFORMANCE TID
             System.out.println("Indtast tid i formatet MM,SS (fx 03,10)");
             double performanceTime = readDouble();
 
             // DATO
-            LocalDate date = null;
+            LocalDate date;
             DateTimeFormatter dateTimeFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy");
             System.out.println("Indtast dato (DD/MM/YYYY)");
             String enteredDate = sc.next();
@@ -247,13 +227,13 @@ public class UI {
             controller.addPerformanceTime(memberID, disciplin, performanceTime, date, lokation);
 
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            System.out.println("Forkert valg. Prøv igen!");
         }
     }
 
     public void showPerformance() {
         System.out.print("Indtast medlemsnr: ");
-        int read = sc.nextInt();
+        int read = readInt();
         Competitor member = (Competitor) controller.findMember(read);
         for (Performance p : member.getPerformances()) {
             System.out.println(p);
@@ -267,32 +247,30 @@ public class UI {
                 2. Rediger medlem
                 3. Slet medlem
                 4. Vis medlemmer
-                5. Søg medlemmer     
+                5. Søg medlemmer
                 """);
         switch (readInt()) {
-            case 1:
+            case 1 -> {
                 System.out.println("Opret medlem");
                 addMemberSystem();
-                break;
-            case 2:
+            }
+            case 2 -> {
                 System.out.println("Rediger medlem");
                 editMember();
-                break;
-            case 3:
+            }
+            case 3 -> {
                 System.out.println("Slet medlem");
                 deleteMember();
-                break;
-            case 4:
+            }
+            case 4 -> {
                 System.out.println("Vis medlemmer");
                 showMembers();
-                break;
-            case 5:
+            }
+            case 5 -> {
                 System.out.println("Søg efter medlemmer");
                 searchMembers();
-                break;
-            default:
-                System.out.println("Fejl i valg. Prøv igen");
-                break;
+            }
+            default -> System.out.println("Fejl i valg. Prøv igen");
         }
     }
 
@@ -309,7 +287,7 @@ public class UI {
                 checkInput = true;
                 System.out.println("Der opstod en fejl. Prøv igen");
             }
-        } while (checkInput == true);
+        } while (checkInput);
         return readInt;
     }
 
@@ -326,24 +304,8 @@ public class UI {
                 checkInput = true;
                 System.out.println("Der opstod en fejl. Prøv igen");
             }
-        } while (checkInput == true);
+        } while (checkInput);
         return readDouble;
-    }
-    public String readString() {
-        boolean checkInput;
-        String readString = null;
-
-        do {
-            try {
-                checkInput = false;
-                readString = sc.nextLine();
-            } catch (InputMismatchException e) {
-                sc.nextLine();
-                checkInput = true;
-                System.out.println("Der opstod en fejl. Prøv igen");
-            }
-        } while (checkInput == true);
-        return readString;
     }
 
     private void introMessage() {
@@ -377,48 +339,57 @@ public class UI {
     }
 
     public void addMember() {
-        System.out.println("Indtast navn");
-        String name = sc.next();
-        System.out.println("Indtast efternavn");
-        String lastName = sc.next();
+        try {
+            System.out.println("Indtast navn");
+            String name = sc.next();
+            System.out.println("Indtast efternavn");
+            String lastName = sc.next();
 
-        LocalDate birthDate = addBirthday();
+            LocalDate birthDate = addBirthday();
 
-        System.out.println("Indtast telefonnummer");
-        int phoneNumber = readInt();
-        System.out.println("Indtast e-mail");
-        String eMail = sc.next();
-        System.out.println("Er medlemmet aktivt? (Svar JA, ellers er medlemmet inaktivt)");
-        boolean activityStatus = false;
-        String isActivityStatus = sc.next().toLowerCase();
-        if (isActivityStatus.contentEquals("ja")) {
-            activityStatus = true;
+            System.out.println("Indtast telefonnummer");
+            int phoneNumber = readInt();
+            System.out.println("Indtast e-mail");
+            String eMail = sc.next();
+            System.out.println("Er medlemmet aktivt? (Svar JA, ellers er medlemmet inaktivt)");
+            boolean activityStatus = false;
+            String isActivityStatus = sc.next().toLowerCase();
+            if (isActivityStatus.contentEquals("ja")) {
+                activityStatus = true;
+            }
+
+            controller.addMember(name, lastName, birthDate, phoneNumber, eMail, activityStatus);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
         }
-
-        controller.addMember(name, lastName, birthDate, phoneNumber, eMail, activityStatus);
     }
 
     public void addCompetitiveMember() {
-        System.out.println("Indtast navn");
-        String name = sc.next();
-        System.out.println("Indtast efternavn");
-        String lastName = sc.next();
+        try {
+            System.out.println("Indtast navn");
+            String name = sc.next();
+            System.out.println("Indtast efternavn");
+            String lastName = sc.next();
 
-        LocalDate birthDate = addBirthday();
+            LocalDate birthDate = addBirthday();
 
-        System.out.println("Indtast telefonnummer");
-        int phoneNumber = readInt();
-        System.out.println("Indtast e-mail");
-        String eMail = sc.next();
-        System.out.println("Er medlemmet aktivt? (Svar JA, ellers er medlemmet inaktivt)");
+            System.out.println("Indtast telefonnummer");
+            int phoneNumber = readInt();
+            System.out.println("Indtast e-mail");
+            String eMail = sc.next();
+            System.out.println("Er medlemmet aktivt? (Svar JA, ellers er medlemmet inaktivt)");
 
-        boolean activityStatus = false;
-        String isActivityStatus = sc.next().toLowerCase();
-        if (isActivityStatus.contentEquals("ja")) {
-            activityStatus = true;
+            boolean activityStatus = false;
+            String isActivityStatus = sc.next().toLowerCase();
+            if (isActivityStatus.contentEquals("ja")) {
+                activityStatus = true;
+            }
+
+            controller.addCompetitiveMember(name, lastName, birthDate, phoneNumber, eMail, activityStatus);
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
         }
-
-        controller.addCompetitiveMember(name, lastName, birthDate, phoneNumber, eMail, activityStatus);
     }
 
     private LocalDate addBirthday() {
@@ -460,10 +431,10 @@ public class UI {
             for (int i = 0; i < controller.getMemberDatabase().size(); i++) {
                 if (controller.getMemberDatabase().get(i).getMemberID() == memberID) {
                     controller.getMemberDatabase().remove(controller.getMemberDatabase().get(i));
+                    System.out.println("Medlem: " + memberID + " blev slettet.");
                 }
             }
-            System.out.println("Medlem: " + memberID + " blev slettet.");
-        } catch (Exception e) {
+        } catch (InputMismatchException e) {
             System.out.println("Det var ikke muligt at slette medlemmet. Prøv igen");
         }
     }

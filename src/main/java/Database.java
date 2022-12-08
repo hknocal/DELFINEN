@@ -28,10 +28,10 @@ public class Database {
     public ArrayList<Member> searchDB(String searchCriteria) {
         ArrayList<Member> searchResult = new ArrayList<>();
         for (Member member : memberDatabase) {
-            if (member.getName().toLowerCase().contains(searchCriteria)) {
+            if (member.getName().equalsIgnoreCase(searchCriteria)) {
                 searchResult.add(member);
             }
-            else if (member.getLastName().toLowerCase().contains(searchCriteria)) {
+            else if (member.getLastName().equalsIgnoreCase(searchCriteria)) {
                 searchResult.add(member);
             }
         }
