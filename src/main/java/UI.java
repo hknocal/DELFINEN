@@ -175,7 +175,9 @@ public class UI {
             case 4 -> {
                 d = Disciplin.BRYSTSVOEMNING;
                 top5Competitor = controller.getTop5Competitors(d);
+
             }
+            default -> System.out.println("Fejl, prøv igen");
         }
 
         for (Competitor competitor : top5Competitor) {
@@ -190,58 +192,63 @@ public class UI {
 
     public void registerPerformance() {
         // PRINT
-        System.out.println("PERFORMANCE REGISTRERING FOR KONKURRENCEUDØVERE:");
-        for (Member member : controller.getMemberDatabase()) {
-            if (member instanceof Competitor) {
-                System.out.println("Medlemsnr: " + member.getMemberID() + " Navn: " + member.getName() + " Efternavn: " + member.getLastName());
+        try {
+            System.out.println("PERFORMANCE REGISTRERING FOR KONKURRENCEUDØVERE:");
+            for (Member member : controller.getMemberDatabase()) {
+                if (member instanceof Competitor) {
+                    System.out.println("Medlemsnr: " + member.getMemberID() + " Navn: " + member.getName() + " Efternavn: " + member.getLastName());
+                }
             }
-        }
 
-        // MEDLEM STAMDATA
-        System.out.print("\n" + "Indtast medlems-ID: ");
-        int memberID = readInt();
-        sc.nextLine();
+            // MEDLEM STAMDATA
+            System.out.print("\n" + "Indtast medlems-ID: ");
+            int memberID = readInt();
+            sc.nextLine();
 
-        Member foundMember = null;
+            Member foundMember = null;
 
-        for (int i = 0; i < controller.getMemberDatabase().size(); i++) {
-            if (controller.getMemberDatabase().get(i).getMemberID() == memberID) {
-                foundMember = controller.getMemberDatabase().get(i);
+            for (int i = 0; i < controller.getMemberDatabase().size(); i++) {
+                if (controller.getMemberDatabase().get(i).getMemberID() == memberID) {
+                    foundMember = controller.getMemberDatabase().get(i);
+                }
             }
+
+            if (foundMember == null) {
+                System.out.println("Ikke fundet!");
+                return;
+            }
+
+            // DISCIPLIN
+
+            Disciplin[] disciplins = Disciplin.values();
+            System.out.println("Discipliner:");
+            for (Disciplin d : disciplins) {
+                System.out.println(d);
+            }
+            System.out.println();
+            System.out.println("Indtast valgt disciplin: ");
+            Disciplin disciplin = Disciplin.valueOf(sc.nextLine().toUpperCase());
+
+            // PERFORMANCE TID
+            System.out.println("Indtast tid i formatet MM,SS (fx 03,10)");
+            double performanceTime = sc.nextDouble();
+
+            // DATO
+            LocalDate date = null;
+            DateTimeFormatter dateTimeFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+            System.out.println("Indtast dato (DD/MM/YYYY)");
+            String enteredDate = sc.next();
+            date = LocalDate.parse(enteredDate, dateTimeFormat);
+
+            // LOKATION
+            System.out.println("Indtast lokation");
+            String lokation = sc.next();
+
+            controller.addPerformanceTime(memberID, disciplin, performanceTime, date, lokation);
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
         }
-
-        if (foundMember == null) {
-            System.out.println("Ikke fundet!");
-            return;
-        }
-
-        // DISCIPLIN
-
-        Disciplin[] disciplins = Disciplin.values();
-        System.out.println("Discipliner:");
-        for (Disciplin d : disciplins) {
-            System.out.println(d);
-        }
-        System.out.println();
-        System.out.println("Indtast valgt disciplin: ");
-        Disciplin disciplin = Disciplin.valueOf(sc.nextLine().toUpperCase());
-
-        // PERFORMANCE TID
-        System.out.println("Indtast tid i formatet MM,SS (fx 03,10)");
-        double performanceTime = sc.nextDouble();
-
-        // DATO
-        LocalDate date = null;
-        DateTimeFormatter dateTimeFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        System.out.println("Indtast dato (DD/MM/YYYY)");
-        String enteredDate = sc.next();
-        date = LocalDate.parse(enteredDate, dateTimeFormat);
-
-        // LOKATION
-        System.out.println("Indtast lokation");
-        String lokation = sc.next();
-
-        controller.addPerformanceTime(memberID, disciplin, performanceTime, date, lokation);
     }
 
     public void showPerformance() {
