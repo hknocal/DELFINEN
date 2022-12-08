@@ -4,14 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" name="Changes" comment="moved test to test directory">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Member.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/MemberTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/MemberTest.java" afterDir="false" />
-    </list>
-    <list id="50b28de6-4779-4ba7-91da-fa96d4eec855" name="Changes by Zana" comment="">
-      <change beforePath="$PROJECT_DIR$/src/test/java/MemberTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/MemberTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" name="Changes" comment="junit tests of possible instances of calculatesubscription" />
+    <list id="50b28de6-4779-4ba7-91da-fa96d4eec855" name="Changes by Zana" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -46,17 +40,6 @@
         <option name="url" value="https://github.com/hknocal/DELFINEN.git" />
       </UrlAndAccount>
     </option>
-  </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/test/java/MemberTest.java">
-      <ranges>
-        <range start1="0" end1="0" start2="0" end2="1" changelist="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" />
-        <range start1="7" end1="7" start2="8" end2="13" changelist="50b28de6-4779-4ba7-91da-fa96d4eec855" />
-        <range start1="10" end1="11" start2="16" end2="17" changelist="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" />
-        <range start1="12" end1="14" start2="18" end2="20" changelist="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" />
-        <range start1="15" end1="15" start2="21" end2="44" changelist="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" />
-      </ranges>
-    </file>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -100,7 +83,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.MemberTest">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="DELFINEN" />
@@ -119,8 +102,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.MemberTest" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.MemberTest" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -145,7 +128,7 @@
       <workItem from="1670317053052" duration="9212000" />
       <workItem from="1670326646566" duration="26186000" />
       <workItem from="1670359282003" duration="2196000" />
-      <workItem from="1670490575067" duration="7082000" />
+      <workItem from="1670490575067" duration="7876000" />
     </task>
     <task id="LOCAL-00001" summary="setup gitignore file">
       <created>1669120697504</created>
@@ -294,7 +277,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670495431579</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="junit tests of possible instances of calculatesubscription">
+      <created>1670497836959</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1670497836959</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -342,7 +332,8 @@
     <MESSAGE value="merge" />
     <MESSAGE value="issues with comparators and sorting fixed and now working" />
     <MESSAGE value="moved test to test directory" />
-    <option name="LAST_COMMIT_MESSAGE" value="moved test to test directory" />
+    <MESSAGE value="junit tests of possible instances of calculatesubscription" />
+    <option name="LAST_COMMIT_MESSAGE" value="junit tests of possible instances of calculatesubscription" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
