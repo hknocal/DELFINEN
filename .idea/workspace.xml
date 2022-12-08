@@ -4,11 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" name="Changes" comment="minor enhancements, fixed search db">
+    <list default="true" id="7b1115fd-ecf4-43a8-8008-5d959b8ac17b" name="Changes" comment="junit tests of possible instances of calculatesubscription">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ButterflyComparator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ButterflyComparator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/UI.java" afterDir="false" />
     </list>
-    <list id="50b28de6-4779-4ba7-91da-fa96d4eec855" name="Changes by Zana" comment="" />
+    <list id="d301a818-6b65-41d1-a1af-f130c558ccb1" name="Changes by hakanocal" comment="" />
+    <list id="7a1aa1ad-bcb8-4f3f-9275-ae2b5fd3df4e" name="Changes by Heval" comment="" />
+    <list id="c7346bf7-3d30-4001-a052-8db72ef35202" name="Changes by Zana" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -132,6 +135,7 @@
       <workItem from="1670326646566" duration="26186000" />
       <workItem from="1670359282003" duration="2196000" />
       <workItem from="1670490575067" duration="7876000" />
+      <workItem from="1670499676157" duration="1665000" />
     </task>
     <task id="LOCAL-00001" summary="setup gitignore file">
       <created>1669120697504</created>
@@ -287,14 +291,7 @@
       <option name="project" value="LOCAL" />
       <updated>1670497836959</updated>
     </task>
-    <task id="LOCAL-00023" summary="minor enhancements, fixed search db">
-      <created>1670510487638</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1670510487638</updated>
-    </task>
-    <option name="localTasksCounter" value="24" />
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -343,8 +340,7 @@
     <MESSAGE value="issues with comparators and sorting fixed and now working" />
     <MESSAGE value="moved test to test directory" />
     <MESSAGE value="junit tests of possible instances of calculatesubscription" />
-    <MESSAGE value="minor enhancements, fixed search db" />
-    <option name="LAST_COMMIT_MESSAGE" value="minor enhancements, fixed search db" />
+    <option name="LAST_COMMIT_MESSAGE" value="junit tests of possible instances of calculatesubscription" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -354,8 +350,6 @@
         <watch expression="memberCounter" language="JAVA" />
         <watch expression="date" />
         <watch expression="date" />
-        <watch expression="member.getName().toLowerCase().contains(searchCriteria)" language="JAVA" />
-        <watch expression="member.getName()" language="JAVA" />
       </configuration>
     </watches-manager>
   </component>

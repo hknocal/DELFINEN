@@ -1,4 +1,5 @@
 import java.awt.*;
+import java.net.CookieHandler;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
@@ -9,6 +10,8 @@ import java.util.Scanner;
 public class UI {
     Scanner sc = new Scanner(System.in);
     Controller controller = new Controller();
+
+    //TODO addMember fejl ved aktivitets status
 
     public void loadUI() {
         loadDB();
@@ -122,6 +125,11 @@ public class UI {
         System.out.println("Oversigt over manglende betaling");
         for (Member member : controller.missingPaymentList()) {
             System.out.println("Medlems-ID: " + member.getMemberID() + " Navn: " + member.getName());
+            System.out.print(Color.RED_BOLD);
+            if (member.getHasPaid() == false) {
+                System.out.println("Medlem i restance!" + "\n");
+                System.out.print(Color.RESET);
+            }
         }
     }
 
@@ -323,17 +331,19 @@ public class UI {
     }
 
     public void showMenu() {
-        System.out.println();
+        System.out.println(Color.BLACK_BOLD);
         System.out.println("""
                 1. Medlemshåndtering
                 2. Økonomi
                 3. Træning
                 9. Afslut
                 """);
+        System.out.println(Color.RESET);
     }
 
 
     public void addMemberSystem() {
+        System.out.println(Color.BLACK_BOLD);
         System.out.println("""
                 1. Tilføj motionist
                 2. Tilføj konkurrenceudøver
@@ -342,9 +352,11 @@ public class UI {
             case 1 -> addMember();
             case 2 -> addCompetitiveMember();
         }
+        System.out.println(Color.RESET);
     }
 
     public void addMember() {
+        System.out.println(Color.BLACK_BOLD);
         try {
             System.out.println("Indtast navn");
             String name = sc.next();
@@ -368,9 +380,11 @@ public class UI {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
+        System.out.println(Color.RESET);
     }
 
     public void addCompetitiveMember() {
+        System.out.println(Color.BLACK_BOLD);
         try {
             System.out.println("Indtast navn");
             String name = sc.next();
@@ -396,9 +410,11 @@ public class UI {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
+        System.out.println(Color.RESET);
     }
 
     private LocalDate addBirthday() {
+        System.out.println(Color.BLACK_BOLD);
         boolean validity = false;
         LocalDate birthDate = null;
         DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy");
@@ -411,26 +427,31 @@ public class UI {
             } catch (DateTimeParseException e) {
                 System.out.println("Fejl i dato format. Prøv igen");
             }
-
+            System.out.println(Color.RESET);
         } while (!validity);
         return birthDate;
     }
 
     public void showMembers() {
+        System.out.println(Color.BLACK_BOLD);
         for (Member member : controller.getMemberDatabase()) {
             System.out.println(member);
         }
+        System.out.println(Color.RESET);
     }
 
     public void showCompetitiveMembers() {
+        System.out.println(Color.BLACK_BOLD);
         for (Member member : controller.getMemberDatabase()) {
             if (member instanceof Competitor) {
                 System.out.println(member);
             }
         }
+        System.out.println(Color.RESET);
     }
 
     public void deleteMember() {
+        System.out.println(Color.BLACK_BOLD);
         try {
             System.out.print("Indtast medlems-ID du vil slette: ");
             int memberID = readInt();
@@ -443,9 +464,11 @@ public class UI {
         } catch (InputMismatchException e) {
             System.out.println("Det var ikke muligt at slette medlemmet. Prøv igen");
         }
+        System.out.println(Color.RESET);
     }
 
     public void editMember() {
+        System.out.println(Color.BLACK_BOLD);
         DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         try {
             System.out.print("Indtast medlems-ID på medlem du vil redigere: ");
@@ -513,9 +536,11 @@ public class UI {
         } catch (InputMismatchException e) {
             System.out.println("Det var ikke muligt at rette medlemmet. Prøv igen");
         }
+        System.out.println(Color.RESET);
     }
 
     public void searchMembers() {
+        System.out.println(Color.BLACK_BOLD);
         System.out.print("Indtast søgekriterie: ");
         String searchCriteria = sc.next();
         ArrayList<Member> searchResult = controller.searchDB(searchCriteria);
@@ -526,15 +551,20 @@ public class UI {
         for (Member member : searchResult) {
             System.out.println(member);
         }
+        System.out.println(Color.RESET);
     }
 
     public void saveToDB() {
+        System.out.println(Color.GREEN_BOLD);
         controller.saveToDb();
-        System.out.println(controller.getMemberDatabase().size() + " medlemmer blev gemt i databasen");
+        System.out.println("✅ " + controller.getMemberDatabase().size() + " medlemmer blev gemt i databasen");
+        System.out.println(Color.RESET);
     }
 
     public void loadDB() {
         controller.loadDB();
-        System.out.println(controller.getMemberDatabase().size() + " medlemmer blev loadet");
+        System.out.println(Color.BLACK_BOLD);
+        System.out.println("✅ " + controller.getMemberDatabase().size() + " medlemmer blev loadet");
+        System.out.println(Color.RESET);
     }
 }
