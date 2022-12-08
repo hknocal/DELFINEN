@@ -106,21 +106,22 @@ public class UI {
 
     //Metode til at tilføje betalinger
     public void addPayment() {
-        System.out.println("KONTINGENTREGISTRERING" + "\n");
-        System.out.print("Indtast medlems-ID for at registrere kontingent: ");
-        int memberID = sc.nextInt();
-        Member foundMember = null;
-        for (int i = 0; i < controller.getMemberDatabase().size(); i++) {
-            if (controller.getMemberDatabase().get(i).getMemberID() == memberID) {
-                foundMember = controller.getMemberDatabase().get(i);
-                break;
+        try {
+            System.out.println("KONTINGENTREGISTRERING" + "\n");
+            System.out.print("Indtast medlems-ID for at registrere kontingent: ");
+            int memberID = sc.nextInt();
+            Member foundMember = null;
+            for (int i = 0; i < controller.getMemberDatabase().size(); i++) {
+                if (controller.getMemberDatabase().get(i).getMemberID() == memberID) {
+                    foundMember = controller.getMemberDatabase().get(i);
+                    break;
+                }
             }
-        }
 
-        if (foundMember == null) {
-            System.out.println("Ikke fundet!");
-            return;
-        }
+            if (foundMember == null) {
+                System.out.println("Ikke fundet!");
+                return;
+            }
 
             System.out.println("Du er ved at registrere en betaling");
             System.out.println("Forventet betaling for medlem: " + foundMember.calculateSubscription());
@@ -149,7 +150,7 @@ public class UI {
     }
 
     public void topPerformers() {
-        ArrayList <Competitor> top5Competitor = new ArrayList<>();
+        ArrayList<Competitor> top5Competitor = new ArrayList<>();
         Disciplin d = null;
         System.out.println("""
                 1. TOP 5 BUTTERFLY
@@ -181,8 +182,8 @@ public class UI {
             ArrayList<Performance> performanceData = competitor.getPerformances();
             System.out.println(
                     "Tid: " + competitor.findBestPerformance(d).getPerformanceTime() +
-                    " Navn: " + competitor.getName() +
-                    " Lokation: " + competitor.findBestPerformance(d).getLocation());
+                            " Navn: " + competitor.getName() +
+                            " Lokation: " + competitor.findBestPerformance(d).getLocation());
         }
     }
 
