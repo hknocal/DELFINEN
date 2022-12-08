@@ -313,6 +313,23 @@ public class UI {
         return readInt;
     }
 
+    public double readDouble() {
+        boolean checkInput;
+        double readDouble = 0;
+
+        do {
+            try {
+                checkInput = false;
+                readDouble = sc.nextDouble();
+            } catch (InputMismatchException e) {
+                sc.next();
+                checkInput = true;
+                System.out.println("Der opstod en fejl. Prøv igen");
+            }
+        } while (checkInput == true);
+        return readDouble;
+    }
+
     private void introMessage() {
         System.out.print("""
                 ----------------------------------
