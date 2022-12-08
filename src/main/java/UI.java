@@ -227,11 +227,11 @@ public class UI {
             }
             System.out.println();
             System.out.println("Indtast valgt disciplin: ");
-            Disciplin disciplin = Disciplin.valueOf(sc.nextLine().toUpperCase());
+            Disciplin disciplin = Disciplin.valueOf(readString().toUpperCase());
 
             // PERFORMANCE TID
             System.out.println("Indtast tid i formatet MM,SS (fx 03,10)");
-            double performanceTime = sc.nextDouble();
+            double performanceTime = readDouble();
 
             // DATO
             LocalDate date = null;
@@ -328,6 +328,22 @@ public class UI {
             }
         } while (checkInput == true);
         return readDouble;
+    }
+    public String readString() {
+        boolean checkInput;
+        String readString = null;
+
+        do {
+            try {
+                checkInput = false;
+                readString = sc.nextLine();
+            } catch (InputMismatchException e) {
+                sc.nextLine();
+                checkInput = true;
+                System.out.println("Der opstod en fejl. Prøv igen");
+            }
+        } while (checkInput == true);
+        return readString;
     }
 
     private void introMessage() {
