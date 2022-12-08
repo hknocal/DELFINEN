@@ -141,7 +141,7 @@ public class UI {
     }
 
     public void totalIncome() {
-        System.out.print(Color.GREEN_BOLD + "🏦 Forventet total indkomst: " + controller.calculateTotalSubscription());
+        System.out.println(Color.GREEN_BOLD + "🏦 Forventet total indkomst: " + controller.calculateTotalSubscription());
     }
     public void topPerformers() {
         ArrayList<Competitor> top5Competitor = new ArrayList<>();
@@ -228,11 +228,8 @@ public class UI {
             double performanceTime = readDouble();
 
             // DATO
-            LocalDate date;
-            DateTimeFormatter dateTimeFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy");
             System.out.println(Color.BLACK_BOLD + "🟡 Indtast dato (DD/MM/YYYY)");
-            String enteredDate = sc.next();
-            date = LocalDate.parse(enteredDate, dateTimeFormat);
+            LocalDate date = addDate();
 
             // LOKATION
             System.out.println(Color.BLACK_BOLD + "🟡 Indtast lokation");
@@ -357,7 +354,8 @@ public class UI {
             String name = sc.next();
             System.out.println(Color.BLACK_BOLD + "🟡 Indtast efternavn");
             String lastName = sc.next();
-            LocalDate birthDate = addBirthday();
+            System.out.println(Color.BLACK_BOLD + "🟡 Indtast fødselsdato: (DD/MM/YYYY)");
+            LocalDate birthDate = addDate();
             System.out.println(Color.BLACK_BOLD + "🟡 Indtast telefonnummer");
             int phoneNumber = readInt();
             System.out.println(Color.BLACK_BOLD + "🟡 Indtast e-mail");
@@ -381,7 +379,8 @@ public class UI {
             String name = sc.next();
             System.out.println(Color.BLACK_BOLD + "🟡 Indtast efternavn");
             String lastName = sc.next();
-            LocalDate birthDate = addBirthday();
+            System.out.println(Color.BLACK_BOLD + "🟡 Indtast fødselsdato: (DD/MM/YYYY)");
+            LocalDate birthDate = addDate();
             System.out.println(Color.BLACK_BOLD + "🟡 Indtast telefonnummer");
             int phoneNumber = readInt();
             System.out.println(Color.BLACK_BOLD + "🟡 Indtast e-mail");
@@ -400,13 +399,11 @@ public class UI {
             errorMessage();
         }
     }
-
-    private LocalDate addBirthday() {
+    private LocalDate addDate() {
         boolean validity = false;
         LocalDate birthDate = null;
         DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         do {
-            System.out.println(Color.BLACK_BOLD + "🟡 Indtast fødselsdato (DD/MM/YYYY)");
             try {
                 String date = sc.next();
                 birthDate = LocalDate.parse(date, dateFormat);
